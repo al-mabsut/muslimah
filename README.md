@@ -18,7 +18,7 @@ Muslimah is an open-source NPM library that offers a comprehensive collection of
 To install the library `Muslimah`, kinldy run the following command in your project directory:
 
 ```bash
-npm install muslimah
+npm install @al-mabsut/muslimah
 ```
 
 ### Usage
@@ -26,14 +26,14 @@ npm install muslimah
 After installation, you can import and use the components of Muslimah in your project as follows:
 
 ```javascript
-import { ComponentName } from 'muslimah';
+import { ComponentName } from '@al-mabsut/muslimah';
 
 // Use the component in your project
 ```
 
 ### Documentation
 
-(WIP)
+- [Project Setup](project-setup.md): For developers who wish to contribute.
 
 ## Contributing
 
@@ -50,4 +50,3 @@ Kindly refer to [CONTRIBUTING.md](CONTRIBUTING.md) for detailed contribution gui
 ## Acknowledgements
 
 Special thanks to the scholars, developers, and community members who have contributed to this project.
-

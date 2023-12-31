@@ -1,0 +1,42 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "google",
+    "plugin:preact/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": [
+    "preact"
+  ],
+  "settings": {
+    "react": {
+      "pragma": "h", // Specify Preact's h function
+      "version": "detect" // Automatically detect the Preact version
+    }
+  },
+  "ignorePatterns": ["dist/"], // Exclude the 'dist' folder from ESLint checks
+  "rules": {
+    "linebreak-style": "off", // Ensure we do not run into Windows linebreak issues
+    "max-len": [
+      "error",
+      {
+          "code": 120, // Adjust the maximum line length as needed
+          "tabWidth": 2, // Adjust the tab width if you use tabs for indentation
+          "ignoreUrls": true, // Optionally, ignore URLs
+          "ignoreStrings": true, // Optionally, ignore strings
+          "ignoreTemplateLiterals": true // Optionally, ignore template literals
+      }
+    ],
+    "indent": ["error", 2]
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","sources":["../../src/index.js"],"sourcesContent":["export const Muslimah = () => (\n  <div>Salaam, Muslimah!</div>\n);\n"],"names":["Muslimah","h"],"mappings":"AAAaA,IAAAA,QAAQ,GAAG,SAAXA,QAAQA,GAAA;EAAA,OACnBC,CAAA,CAAK,KAAA,EAAA,IAAA,EAAA,mBAAsB,CAAC,CAAA;AAAA;;;;"}
