@@ -1,3 +1,3 @@
 export const Muslimah = () => (
-  <div>Salaam, Muslimah!</div>
+  <div><p>Salaam, Muslimah!</p></div>
 );
