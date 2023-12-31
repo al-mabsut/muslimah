@@ -1,0 +1,30 @@
+name: Setup npm with caching
+
+description: Installs node modules and caches them for reusability
+
+runs:
+  using: "composite"
+  steps:
+    - name: Setup specific node version
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: .tool-versions
+        cache: "npm"
+
+    - name: Cache node modules
+      id: cache-nodemodules
+      uses: actions/cache@v3
+      env:
+        cache-name: cache-node-modules
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+
+    - name: Install Dependencies
+      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash

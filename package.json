@@ -9,7 +9,11 @@
     "dist/esm"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "lint": "eslint .",
+    "test-cjs": "jest --config jest.config.cjs.js",
+    "test-esm": "jest --config jest.config.esm.js",
+    "check-node-version": "check-node-version --print --node $(cat .tool-versions | grep 'nodejs ' | cut -d' ' -f2)"
   },
   "repository": {
     "type": "git",
@@ -40,7 +44,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "babel-jest": "^29.7.0",
-    "eslint": "^8.56.0",
+    "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-preact": "^0.1.0",
