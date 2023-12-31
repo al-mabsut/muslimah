@@ -24,7 +24,7 @@
       "version": "detect" // Automatically detect the Preact version
     }
   },
-  "ignorePatterns": ["dist/"], // Exclude the 'dist' folder from ESLint checks
+  "ignorePatterns": ["dist/", "storybook-static/"], // Exclude the 'dist' folder from ESLint checks
   "rules": {
     "linebreak-style": "off", // Ensure we do not run into Windows linebreak issues
     "max-len": [

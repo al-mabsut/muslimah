@@ -8,6 +8,7 @@
     "dist/cjs",
     "dist/esm"
   ],
+  "type": "module",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint .",

@@ -25,8 +25,8 @@ function styleInject(css, ref) {
   }
 }
 
-var css_248z = ".index_styling__VnCre {\n  font-size: x-large;\n  color: pink;\n}\n";
-var style = {"styling":"index_styling__VnCre"};
+var css_248z = ".index-module_styling__a2FxM {\n  font-size: x-large;\n  color: pink;\n}\n";
+var style = {"styling":"index-module_styling__a2FxM"};
 styleInject(css_248z);
 
 var Muslimah = function Muslimah() {

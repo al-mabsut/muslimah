@@ -1,6 +1,6 @@
-const commonConfig = require('./jest.config.common');
+import commonConfig from './jest.config.common.js';
 
-module.exports = {
+export default {
   ...commonConfig,
   moduleNameMapper: {
     '^@al-mabsut/muslimah$': '<rootDir>/dist/cjs/bundle.js'
