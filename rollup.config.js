@@ -3,6 +3,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import alias from '@rollup/plugin-alias';
 import path from 'path';
+import postcss from 'rollup-plugin-postcss';
 
 export default {
   input: 'src/index.js', // Main JavaScript file
@@ -13,6 +14,10 @@ export default {
         { find: '@components', replacement: path.resolve(__dirname, 'src/components/') },
         { find: '@utils', replacement: path.resolve(__dirname, 'src/utils/') }
       ]
+    }),
+    postcss({
+      extensions: ['.css'],
+      modules: true
     }),
     resolve(), // Locate and bundle dependencies in 'node_modules'
     babel({
