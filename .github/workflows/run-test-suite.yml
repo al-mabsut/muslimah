@@ -18,3 +18,4 @@ jobs:
       - run: npm run lint
       - run: npm run test-cjs
       - run: npm run test-esm
+      - run: npm run build-storybook

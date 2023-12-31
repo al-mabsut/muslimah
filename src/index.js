@@ -1,3 +1,1 @@
-export const Muslimah = () => (
-  <div>Salaam, Muslimah!</div>
-);
+export { Muslimah } from '@components/Muslimah';

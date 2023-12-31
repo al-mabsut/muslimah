@@ -13,7 +13,10 @@
     "lint": "eslint .",
     "test-cjs": "jest --config jest.config.cjs.js",
     "test-esm": "jest --config jest.config.esm.js",
-    "check-node-version": "check-node-version --print --node $(cat .tool-versions | grep 'nodejs ' | cut -d' ' -f2)"
+    "check-node-version": "check-node-version --print --node $(cat .tool-versions | grep 'nodejs ' | cut -d' ' -f2)",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "serve-storybook": "sirv ./storybook-static/. --host 127.0.0.1 --port 8080 --cors --single"
   },
   "repository": {
     "type": "git",
@@ -43,13 +46,27 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/preact": "^7.6.6",
+    "@storybook/preact-vite": "^7.6.6",
+    "@storybook/test": "^7.6.6",
     "babel-jest": "^29.7.0",
     "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-preact": "^0.1.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "fs": "^0.0.1-security",
     "jest": "^29.7.0",
     "jest-preset-preact": "^4.1.0",
-    "rollup": "^2.79.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^2.79.1",
+    "rollup-plugin-postcss": "^4.0.2",
+    "sirv-cli": "^2.0.2",
+    "storybook": "^7.6.6"
   }
 }
