@@ -35,7 +35,8 @@
   },
   "homepage": "https://github.com/al-mabsut/muslimah#readme",
   "dependencies": {
-    "preact": "^10.19.3"
+    "preact": "^10.19.3",
+    "react-markdown": "^9.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
