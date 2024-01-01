@@ -56,7 +56,7 @@
     "@storybook/preact-vite": "^7.6.6",
     "@storybook/test": "^7.6.6",
     "babel-jest": "^29.7.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0",
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-preact": "^0.1.0",
