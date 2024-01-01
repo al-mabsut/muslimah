@@ -16,13 +16,8 @@ button {
   align-items: center;
 }
 
-.modalOpenBtn img{
-  filter: grayscale(1);
-  transition: all .5s ease;
-}
-
-.modalOpenBtn:hover img{
-  filter: initial;
+.modalOpenBtn:hover{
+  opacity: .6;
 }
 
 .mainModal{

@@ -3,8 +3,9 @@ import { useState } from 'react';
 import style from './index.module.css';
 import DetailsIcon from './details.svg';
 import CloseIcon from './circularCloseBtn.png';
+import { content } from '../../content';
 
-const Modal = ({ tabsIcons, tabsContent }) => {
+const Modal = ({ tabsIcons, tabsContentKeys }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
@@ -27,7 +28,7 @@ const Modal = ({ tabsIcons, tabsContent }) => {
               )) }
             </div>
             <div className={style.tabsBody}>
-              { tabsContent[selectedTabIndex] }
+              { content[tabsContentKeys[selectedTabIndex]] }
             </div>
           </div>
         </div>
