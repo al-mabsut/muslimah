@@ -11,7 +11,7 @@
 - Renew Wudu (partial ablution) whenever bleeding/spotting occurs. If this happens during Salaah, the prayer breaks and must be restarted.
 - If bleeding frequency prevents completion of Salaah (prayer), follow the guidelines for an Excused Person (Ma’dhoor).
 
-## Clarifications
+## Additional Clarifications
 
 - Though currently classified as Istihadah (dysfunctional bleeding), future developments might reclassify it as Hayd, affecting worship practices. When this happens, then for all the days marked as Hayd:
   - Repeat any Qadaa (makeup) Salaah (prayer) performed.

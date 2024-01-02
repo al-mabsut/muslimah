@@ -3,7 +3,11 @@
 - Based on the latest information provided by you, your Ongoing Hayd concluded before your latest Hayd habit.
 - Accordingly, on it's conclusion you were to perform a Ghusl (full ablution) to attain purity from the state of Hayd and resume your seasonal/daily worship as applies (Prayer and Ramadan etc.)
 - If the conclusion of Hayd was just before a Salaah (prayer) time while there was sufficient time for Ghusl (full ablution) and Takbeer-e-Tahreema remaining, perform Qadaa (makeup) for the missed Salaah (prayer). If not, Qadaa (makeup) is not required.
+
+## Additional Clarifications
+
 - Since your Hayd ended earlier than usual; there is always a chance that your Hayd could still return. A precautionary Ghusl at your Hayd habit time is advisable due to the possibility of bleeding resuming within 15 days (from the conclusion of Hayd).
+- Such resuming of bleeding may end up compromising your Salaah (prayer) until you have repeated your Ghusl again. The precautionary Ghusl is therefore adviced to avoid this from happening.
 
 ## Ramadan Clarifications
 

@@ -12,7 +12,7 @@
 - Once the minimum quota for Hayd has been met, then all the Ahkaam related to Hayd will apply. Ensure to make a proper record once your bleeding has exceeded 72 hours.
 - If bleeding stops for more than 15 days, and is shorter than 3 days, it's considered Istihaadah, requiring Qadaa (makeup) of missed Salaah (prayer) during these days you were advised not to pray by us.
 
-## Clarifications
+## Additional Clarifications
 
 - Delaying Salaah (prayer) is advised due to the potential recurrence of bleeding, making it Waajib (mandatory/necessary) to adhere to this guidance.
 - You are not yet required to do Ghusl each time your bleeding stops. You may suffice on Wudu (partial ablution) for each Salaah (prayer)

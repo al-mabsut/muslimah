@@ -7,9 +7,9 @@
     - However, if the time of Salaah is about to expire, then one should do a Wudu and pray as normal.
   - If the bleeding continuous such that it encompasses an entire Salaah time, from beginning till the end such that in between there is not sufficient time to do Wudu and complete a prayer, then the ruling of an Excused Person (Ma’dhur) will apply to you, which you can read in more detail here: ...
 
-## Clarifications
+## Additional Clarifications
 
-- This type of bleeding can be highly deceiving, where physically speaking the flow can be very heavy and have all the signs of Hayd/Nifaas. However, since this bleeding occurs outside the days that Shari’iyyah regards as Hayd, this bleeding is to be ignored.
+- This type of bleeding can be deceiving, where physically speaking the flow can be very heavy and have all the signs of Hayd/Nifaas. However, since this bleeding occurs outside the days that Shari’iyyah regards as Hayd, this bleeding is to be ignored.
 
 ## Ramadan Clarifications
 

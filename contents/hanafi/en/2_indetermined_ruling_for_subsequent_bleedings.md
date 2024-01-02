@@ -6,7 +6,7 @@
   - It is Waajib (Necessary) to log your discharges (especially in your current situation).
   - Accurate tracking is crucial for scholars to provide effective assistance.
 
-## Clarifications
+## Additional Clarifications
 
 - Based on your reported discharges, you are currently classified as experiencing continuous bleeding.
 - To determine the specific ruling applicable to your situation, additional information is needed.

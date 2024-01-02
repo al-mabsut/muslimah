@@ -8,7 +8,7 @@
   - Quran Recitation
   - Tawaaf around the Kabah
 
-## Clarifications
+## Additional Clarifications
 
 - Tuhr in Arabic means purity
 - They are those days in which a woman is not undergoing Hayd or Nifaas and is to observe all seasonal/daily religious observances.
