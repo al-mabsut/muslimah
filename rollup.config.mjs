@@ -4,6 +4,10 @@ import commonjs from '@rollup/plugin-commonjs';
 import alias from '@rollup/plugin-alias';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import markdown from '@jackfranklin/rollup-plugin-markdown';
+
+// import { markdownLoader } from './rollup_plugins/markdown-loader.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -15,9 +19,14 @@ export default {
   plugins: [
     alias({
       entries: [
+        { find: '@hanafi', replacement: path.resolve(__dirname, 'contents/hanafi/') },
         { find: '@components', replacement: path.resolve(__dirname, 'src/components/') },
         { find: '@utils', replacement: path.resolve(__dirname, 'src/utils/') }
       ]
+    }),
+    markdown({
+      include: 'content/hanafi/en/*.md',
+      allowImports: true
     }),
     postcss({
       extensions: ['.css'],
