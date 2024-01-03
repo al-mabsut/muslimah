@@ -5,6 +5,7 @@ import alias from '@rollup/plugin-alias';
 import path from 'path';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
+import image from '@rollup/plugin-image';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -49,6 +50,7 @@ export default {
       extensions: ['.css'],
       modules: true
     }),
+    image(),
     resolve(), // Locate and bundle dependencies in 'node_modules'
     babel({
       exclude: 'node_modules/**', // Only transpile our source code

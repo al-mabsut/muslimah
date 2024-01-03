@@ -1,3 +1,5 @@
+import { contentStore } from '@al-mabsut/muslimah';
+
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
