@@ -1,3 +1,5 @@
+import { contentStore } from '@al-mabsut/muslimah';
+
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -3022,11 +3024,9 @@ var BaseHaydModal = function BaseHaydModal(_ref) {
   });
 };
 
-// import { contentStore } from '@al-mabsut/muslimah';
-
 var HaydModal = function HaydModal() {
   return h(BaseHaydModal, {
-    contentStore: {},
+    contentStore: contentStore,
     contentStoreKey: '7_ruling_of_hayd.md'
   });
 };
