@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-no-bind */
 import { useState } from 'react';
 import style from './index.module.css';
-import DetailsIcon from './details.svg';
-import CloseIcon from './circularCloseBtn.png';
-import { content } from '../../content';
+import DetailsIcon from '../../assets/details.svg';
+import CloseIcon from '../../assets/circularCloseBtn.png';
 
-const Modal = ({ tabsIcons, tabsContentKeys }) => {
+const Modal = ({ tabsIcons, tabsContentKeys, tabsContent }) => {
   const [isModalOpen, setIsModalOpen] = useState(true);
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
 
@@ -28,7 +27,7 @@ const Modal = ({ tabsIcons, tabsContentKeys }) => {
               )) }
             </div>
             <div className={style.tabsBody}>
-              { content[tabsContentKeys[selectedTabIndex]] }
+              { tabsContent[tabsContentKeys[selectedTabIndex]].map((text => <p>{text}</p>)) }
             </div>
           </div>
         </div>

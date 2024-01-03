@@ -2,7 +2,7 @@ import HaydModal from './index';
 
 // This default export determines where your story goes in the story list
 export default {
-  title: 'Modal/Hayd',
+  title: 'Hanafi/AR/Hayd',
   component: HaydModal
 };
 
