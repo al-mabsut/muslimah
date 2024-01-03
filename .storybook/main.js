@@ -1,6 +1,7 @@
 /** @type { import('@storybook/preact-vite').StorybookConfig } */
 import fs from 'fs/promises';
 import { StorybookConfig } from '@storybook/preact-vite';
+import path from 'path'
 
 const config = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -24,6 +25,11 @@ const config = {
       exclude: [],
     };
 
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@al-mabsut/muslimah': path.resolve(__dirname, '../node_modules/@al-mabsut/muslimah/dist/esm/bundle.js'),
+    };
+
     // Custom esbuild plugin for loading `.js` files as JSX
     if (configType === 'DEVELOPMENT') {
       config.optimizeDeps = config.optimizeDeps || {};
@@ -42,7 +48,18 @@ const config = {
       };
     };
 
-  return config;
+  return {
+    ...config,
+    resolve: {
+
+      alias: [
+        { find: '@hanafi', replacement: path.resolve(__dirname, 'contents/hanafi/') },
+        { find: '@components', replacement: path.resolve(__dirname, 'src/components/') },
+        { find: '@utils', replacement: path.resolve(__dirname, 'src/utils/') },
+        { find: '@al-mabsut/muslimah', replacement: path.resolve(__dirname, '../node_modules/@al-mabsut/muslimah/dist/esm/bundle.js') }
+      ]
+    },
+  };
 },
 };
 export default config;
