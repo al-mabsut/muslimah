@@ -1,15 +1,19 @@
 # Muslimah: Islamic Jurisprudence resources for Women
 
+## See Live Content
+
+[Github Pages](https://al-mabsut.github.io/muslimah/)
+
 ## About Muslimah
 
 Muslimah is an open-source NPM library that offers a comprehensive collection of components and resources pertaining to Islamic jurisprudence, with a particular focus on *masaail* (issues) relevant to women. It aims to be a centralized, authoritative source of knowledge that is subject to public scrutiny by the scholarly community.
 
 ## Features
 
-- **Comprehensive Coverage**: Includes a wide range of topics and issues pertinent to women, such as Hayd, Nifaas, Marriage, Divorce, Safr, Hajj etc.
-- **Scholarly References**: Information is curated and compiled from reputable Islamic scholars and texts.
-- **Easy to Integrate**: Designed to be seamlessly integrated into Islamic educational platforms, websites, and applications.
-- **Community-Driven**: Open for contributions, suggestions, and feedback from the Muslim community and Islamic scholars.
+* **Comprehensive Coverage**: Includes a wide range of topics and issues pertinent to women, such as Hayd, Nifaas, Marriage, Divorce, Safr, Hajj etc.
+* **Scholarly References**: Information is curated and compiled from reputable Islamic scholars and texts.
+* **Easy to Integrate**: Designed to be seamlessly integrated into Islamic educational platforms, websites, and applications.
+* **Community-Driven**: Open for contributions, suggestions, and feedback from the Muslim community and Islamic scholars.
 
 ## Content
 
@@ -29,8 +33,8 @@ Muslimah is an open-source NPM library that offers a comprehensive collection of
 
 Guidelines to edit/contribute to more content:
 
-- Ensure that your content is properly formatted according to Markdown rules.
-- Use an [online Markdown Editor](https://stackedit.io/app#) if need be.
+* Ensure that your content is properly formatted according to Markdown rules.
+* Use an [online Markdown Editor](https://stackedit.io/app#) if need be.
 
 ## Tech Savy Contributions
 
