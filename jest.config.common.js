@@ -98,7 +98,7 @@ const commonConfig = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: 'jest-preset-preact'
+  preset: 'jest-preset-preact',
 
   // Run tests from one or more projects
   // projects: null,
@@ -178,10 +178,10 @@ const commonConfig = {
 
   // A map from regular expressions to paths to transformers
   // transform: null,
-  // transform: {
-  //   '^.+\\.js?$': 'babel-jest',
-  //   '\\.(jpg|jpeg|png|svg|webp|)$': './fileMock.js',
-  // },
+  transform: {
+    // '^.+\\.js?$': 'babel-jest'
+    // '\\.(jpg|jpeg|png|svg|webp|)$': './fileMock.js'
+  },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip
   // transformation
@@ -189,10 +189,10 @@ const commonConfig = {
   //   "/node_modules/"
   // ],
 
-  // transformIgnorePatterns: [
-  //   // This is needed to solve: SyntaxError: Unexpected token 'export'
-  //   "node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)"
-  // ],
+  transformIgnorePatterns: [
+    // This is needed to solve: SyntaxError: Unexpected token 'export'
+    'node_modules/(?!@ngrx|(?!deck.gl)|ng-dynamic)'
+  ]
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically
   // return a mock for them

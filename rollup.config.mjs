@@ -3,35 +3,14 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import alias from '@rollup/plugin-alias';
 import path from 'path';
-import fs from 'fs';
 import { fileURLToPath } from 'url';
+import markdownContentPlugin from './plugins/markdown_plugin.js';
+import pkg from "./package.json" assert { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import postcss from 'rollup-plugin-postcss';
-
-const markdownContentPlugin = () => ({
-  name: 'markdown-content-plugin',
-  renderChunk(code) {
-    const contentStore = {};
-    const directoryPath = path.join(__dirname, 'contents/hanafi/en');
-
-    const files = fs.readdirSync(directoryPath);
-    files.forEach(file => {
-      if (file.endsWith('.md')) {
-        const filePath = path.join(directoryPath, file);
-        contentStore[file] = fs.readFileSync(filePath, 'utf8');
-      }
-    });
-
-    const modifiedCode = code + `\n export const contentStore = ${JSON.stringify(contentStore)};\n`;
-
-    // Return modified code and null for sourcemap
-    return { code: modifiedCode, map: null };
-  }
-});
-
 
 export default {
   input: 'src/index.js', // Main JavaScript file
@@ -59,7 +38,7 @@ export default {
   ],
   output: [
     {
-      file: 'dist/cjs/bundle.js',
+      file: pkg.main,
       format: 'cjs',
       name: '@al-mabsut/muslimah',
       sourcemap: true,
@@ -68,7 +47,7 @@ export default {
       }
     },
     {
-      file: 'dist/esm/bundle.js',
+      file: pkg.module,
       format: 'esm',
       name: '@al-mabsut/muslimah',
       sourcemap: true,
