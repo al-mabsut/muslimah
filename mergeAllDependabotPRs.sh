@@ -24,7 +24,13 @@ echo "Checking out branch: $branchName"
 git checkout -b $branchName
 
 echo "Pull all dependabot PRs into this branch"
-git pull origin $dependabotPRBranchNames --no-edit --no-rebase
+if ! git pull origin $dependabotPRBranchNames --no-edit --no-rebase; then
+    echo "Merge failed due to conflicts."
+    git checkout -f
+    git checkout -
+    git branch -D $branchName
+    exit 1
+fi
 git commit --amend -m "Combine all dependabot-prs until $ts
 
 This commit combines all the following PRs: $dependabotPRLinks
