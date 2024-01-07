@@ -4,12 +4,6 @@ import initialBleeding from '@hanafi/en/1_indeterminate_ruling_on_initial_bleedi
 import subseqeuentBleedings from '@hanafi/en/2_indeterminate_ruling_for_subsequent_bleedings.md';
 import presentCycle from '@hanafi/en/3_indeterminate_ruling_for_present_cycle.md';
 
-export const scenarios = {
-  'initial-bleeding': true,
-  'subsequent-bleedings': true,
-  'present-cycle': true
-};
-
 export const Indeterminate = ({ scenario, style }) => {
   let content;
   switch (scenario) {
