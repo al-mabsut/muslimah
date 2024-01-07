@@ -1,0 +1,23 @@
+name: Auto publish to npm
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup npm/node leveraging full caching
+        uses: ./.github/setup-npm-with-caching
+
+      - name: Create bundle
+        run: npm run build
+
+      - name: Publish to npm
+        uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
