@@ -1,5 +1,7 @@
 # Ruling: Istihadah
 
+## Guidance
+
 - When a bleeding is observed outside the days of Hayd/Nifaas, then such a bleeding is termed Istihaadah
 - From a religious perspective, this bleeding is to be regarded on the same level as a nose bleeding:
   - Despite this bleeding, you are still required to observe your daily prayers and fasting
