@@ -1,7 +1,6 @@
-import { h } from 'preact';
 import { Hidayah } from '@components/Hidayah';
-import completeTuhr from '@hanafi/en/9_ruling_of_tuhr.md';
-import concludingExcess10DayBleeding from '@hanafi/en/12_ruling_tuhr_concluding_ongoing_bleeding_exceeding_10_days.md';
+import * as completeTuhr from '@hanafi/en/9_ruling_of_tuhr.md';
+import * as concludingExcess10DayBleeding from '@hanafi/en/12_ruling_tuhr_concluding_ongoing_bleeding_exceeding_10_days.md';
 
 export const Tuhr = ({ scenario = 'complete', style }) => {
   let content;

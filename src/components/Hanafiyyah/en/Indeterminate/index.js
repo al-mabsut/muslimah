@@ -1,8 +1,7 @@
-import { h } from 'preact';
 import { Hidayah } from '@components/Hidayah';
-import initialBleeding from '@hanafi/en/1_indeterminate_ruling_on_initial_bleeding.md';
-import subseqeuentBleedings from '@hanafi/en/2_indeterminate_ruling_for_subsequent_bleedings.md';
-import presentCycle from '@hanafi/en/3_indeterminate_ruling_for_present_cycle.md';
+import * as initialBleeding from '@hanafi/en/1_indeterminate_ruling_on_initial_bleeding.md';
+import * as subseqeuentBleedings from '@hanafi/en/2_indeterminate_ruling_for_subsequent_bleedings.md';
+import * as presentCycle from '@hanafi/en/3_indeterminate_ruling_for_present_cycle.md';
 
 export const Indeterminate = ({ scenario, style }) => {
   let content;

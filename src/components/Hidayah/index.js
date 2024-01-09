@@ -1,9 +1,14 @@
-/* eslint-disable react/no-danger */
-import { h, Fragment } from 'preact';
+import { Title, Clarification, Guidance, Marriage, Ramadan } from '@components/Content';
 
 export const Hidayah = ({ content, style, children }) => (
-  <>
-    <div dangerouslySetInnerHTML={{ __html: String(content) }} />
+  <div>
+    <div>
+      <Title text={content.title} />
+      <Guidance text={content.guidance} />
+      <Clarification text={content.additionalClarifications} />
+      <Ramadan text={content.ramadanClarifications} />
+      <Marriage text={content.maritalClarifications} />
+    </div>
     {children}
-  </>
+  </div>
 );

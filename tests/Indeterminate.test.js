@@ -1,5 +1,10 @@
 const { render } = require('@testing-library/preact');
 const { Indeterminate } = require('@al-mabsut/muslimah');
+import { h } from 'preact';
+
+// eslint-disable-next-line react/display-name
+jest.mock('react-markdown', () => ({ children }) => <div>{children}</div>);
+
 
 describe('Indeterminate', () => {
   it('should work as expected', () => {
