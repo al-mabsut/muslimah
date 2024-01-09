@@ -1,5 +1,7 @@
 # Ruling: Most Likely Tuhr
 
+## Guidance
+
 - Based on the latest information provided by you, your Ongoing Hayd concluded after your latest Hayd habit and did not exceed 10 days.
 - Accordingly, on it's conclusion you were to perform a Ghusl (full ablution) to attain purity from the state of Hayd and resume your seasonal/daily worship as applies (Prayer and Ramadan etc.)
 - If the conclusion of Hayd was just before a Salaah (prayer) time while there was sufficient time for Ghusl (full ablution) and Takbeer-e-Tahreema remaining, perform Qadaa (makeup) for the missed Salaah (prayer). If not, Qadaa (makeup) is not required.

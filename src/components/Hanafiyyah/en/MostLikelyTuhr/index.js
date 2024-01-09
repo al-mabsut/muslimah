@@ -1,7 +1,6 @@
-import { h } from 'preact';
 import { Hidayah } from '@components/Hidayah';
-import beforeHabit from '@hanafi/en/10_ruling_most_likely_tuhr_concluding_ongoing_hayd_before_habit_completion.md';
-import before10Days from '@hanafi/en/11_ruling_most_likely_tuhr_concluding_ongoing_hayd_before_10_days.md';
+import * as beforeHabit from '@hanafi/en/10_ruling_most_likely_tuhr_concluding_ongoing_hayd_before_habit_completion.md';
+import * as before10Days from '@hanafi/en/11_ruling_most_likely_tuhr_concluding_ongoing_hayd_before_10_days.md';
 
 export const MostLikelyTuhr = ({ scenario = 'complete', style }) => {
   let content;

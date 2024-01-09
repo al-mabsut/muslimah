@@ -179,7 +179,7 @@ const commonConfig = {
   // A map from regular expressions to paths to transformers
   // transform: null,
   transform: {
-    // '^.+\\.js?$': 'babel-jest'
+    '^.+\\.js?$': 'babel-jest'
     // '\\.(jpg|jpeg|png|svg|webp|)$': './fileMock.js'
   },
 

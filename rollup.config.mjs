@@ -2,6 +2,7 @@ import babel from '@rollup/plugin-babel';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import alias from '@rollup/plugin-alias';
+import { visualizer } from "rollup-plugin-visualizer";
 import path from 'path';
 import { fileURLToPath } from 'url';
 import markdownContentPlugin from './plugins/markdown_plugin.js';
@@ -34,7 +35,8 @@ export default {
       extensions: ['.js', '.jsx'],
       babelHelpers: 'bundled'
     }),
-    commonjs() // Convert CommonJS modules to ES6
+    commonjs(), // Convert CommonJS modules to ES6
+    visualizer(),
   ],
   output: [
     {

@@ -3,3 +3,4 @@ npm-debug.log
 storybook-static/
 .DS_Store
 dist/
+stats.html
