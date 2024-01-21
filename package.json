@@ -65,7 +65,6 @@
     "jest-preset-preact": "^4.1.0",
     "marked": "^11.1.1",
     "preact": "^10.11.3",
-    "react-markdown": "^9.0.1",
     "rollup": "^4.9.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-visualizer": "^5.12.0",
@@ -73,7 +72,6 @@
     "storybook": "^7.6.6"
   },
   "peerDependencies": {
-    "react-markdown": "^9.0.1",
     "preact": "^10.11.3"
   }
 }
