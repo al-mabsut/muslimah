@@ -2,10 +2,15 @@ import { MostLikelyHayd } from '@components/Hanafiyyah/en/MostLikelyHayd';
 
 export default {
   title: 'MostLikelyHayd',
-  component: MostLikelyHayd
+  component: MostLikelyHayd,
+  argTypes: {
+    background: { control: 'color' }
+  }
 };
 
 const Template = (args) => (<MostLikelyHayd {...args} />);
 
 export const Default = Template.bind({});
-Default.args = { };
+Default.args = {
+  background: '#fff'
+};

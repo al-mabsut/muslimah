@@ -1,4 +1,4 @@
-export const prepareTextElements = (text) => {
+export const prepareTextElements = ({ text, title }) => {
   const elements = [];
   let nestedList = null;
 
@@ -9,17 +9,17 @@ export const prepareTextElements = (text) => {
     if (t.startsWith('in:')) {
       if (!nestedList) {
         // Start a new nested list
-        nestedList = [<li key={i}>{t.replaceAll('in:', '')}</li>];
+        nestedList = [<li key={`prepare_text_${title}_nested_${i}`}>{t.replaceAll('in:', '')}</li>];
       }
       else {
         // Continue the existing nested list
-        nestedList.push(<li key={i}>{t.replaceAll('in:', '')}</li>);
+        nestedList.push(<li key={`prepare_text_${title}_nested_${i}`}>{t.replaceAll('in:', '')}</li>);
       }
     }
     else {
       // If we have an open nested list, close it before adding the current item
       if (nestedList) {
-        elements.push(<ul key={i}>{nestedList}</ul>);
+        elements.push(<ul key={`prepare_text_${title}_main_${i}`}>{nestedList}</ul>);
         nestedList = null;
       }
 
@@ -39,7 +39,7 @@ const Content = ({ icon, heading, text }) => (
   <div>
     <div>{icon}</div>
     <h2>{heading}</h2>
-    { text && prepareTextElements(text) }
+    { text && prepareTextElements({ text, title: heading }) }
   </div>
 );
 

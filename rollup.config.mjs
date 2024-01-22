@@ -15,7 +15,7 @@ import postcss from 'rollup-plugin-postcss';
 
 export default {
   input: 'src/index.js', // Main JavaScript file
-  external: ['preact'], // Don’t bundle Preact
+  external: ['preact', 'preact/hooks'], // Don’t bundle Preact
   plugins: [
     alias({
       entries: [

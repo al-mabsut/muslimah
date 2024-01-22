@@ -4,14 +4,14 @@ const { render } = require('@testing-library/preact');
 describe('Parser', () => {
   it('renders a list correctly', () => {
     const text = ['Item 1', 'Item 2'];
-    const { container } = render(prepareTextElements(text));
+    const { container } = render(prepareTextElements({ text }));
     
     expect(container.querySelectorAll('ul > li')).toHaveLength(text.length);
   });
 
   it('renders nested list correctly', () => {
     const text = ['Item 1', 'in:Subitem 1', 'in:Subitem 2', 'Item 2'];
-    const { container } = render(prepareTextElements(text));
+    const { container } = render(prepareTextElements({ text, title: 'demo' }));
     
     expect(container.querySelectorAll('ul')).toHaveLength(2);
     expect(container.querySelectorAll('ul > ul')).toHaveLength(1);
@@ -21,7 +21,7 @@ describe('Parser', () => {
   
   it('renders some nested lists correctly', () => {
     const text = ['Item 1', 'in:Subitem 1', 'in:Subitem 2', 'Item 2', 'in:Subitem2 1', 'in:Subitem2 2', 'in:Subitem2 3', 'Item 3'];
-    const { container } = render(prepareTextElements(text));
+    const { container } = render(prepareTextElements({ text, title: 'demo' }));
     
     expect(container.querySelectorAll('ul')).toHaveLength(3);
     expect(container.querySelectorAll('ul > ul')).toHaveLength(2);
