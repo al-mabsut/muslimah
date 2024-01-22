@@ -2,10 +2,15 @@ import { MostLikelyIstihadah } from '@components/Hanafiyyah/en/MostLikelyIstihad
 
 export default {
   title: 'MostLikelyIstihadah',
-  component: MostLikelyIstihadah
+  component: MostLikelyIstihadah,
+  argTypes: {
+    background: { control: 'color' }
+  }
 };
 
 const Template = (args) => (<MostLikelyIstihadah {...args} />);
 
 export const Default = Template.bind({});
-Default.args = { };
+Default.args = {
+  background: '#fff'
+};

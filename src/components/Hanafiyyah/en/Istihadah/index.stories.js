@@ -2,10 +2,15 @@ import { Istihadah } from '@components/Hanafiyyah/en/Istihadah';
 
 export default {
   title: 'Istihadah',
-  component: Istihadah
+  component: Istihadah,
+  argTypes: {
+    background: { control: 'color' }
+  }
 };
 
 const Template = (args) => (<Istihadah {...args} />);
 
 export const Default = Template.bind({});
-Default.args = { };
+Default.args = {
+  background: '#fff'
+};

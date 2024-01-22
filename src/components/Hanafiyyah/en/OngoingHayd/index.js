@@ -2,7 +2,7 @@ import { Hidayah } from '@components/Hidayah';
 import * as tillHabit from '@hanafi/en/5_ruling_of_ongoing_hayd_till_habit.md';
 import * as till10 from '@hanafi/en/6_ruling_of_ongoing_hayd_till_10_days.md';
 
-export const OngoingHayd = ({ scenario, style }) => {
+export const OngoingHayd = ({ scenario, ...props }) => {
   let content;
   switch (scenario) {
   case 'until-habit':
@@ -16,8 +16,6 @@ export const OngoingHayd = ({ scenario, style }) => {
   }
 
   return (
-    <div>
-      <Hidayah content={content} style={style} />
-    </div>
+    <Hidayah content={content} {...props} />
   );
 };
