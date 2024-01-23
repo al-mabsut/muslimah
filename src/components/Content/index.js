@@ -1,4 +1,28 @@
-export const prepareTextElements = ({ text, title }) => {
+/* eslint-disable react/jsx-no-bind */
+const wordsExplanationDictionary = {
+  waajib: '(necessary)',
+  fard: '(obligatory)',
+  qadaa: '(makeup)'
+};
+
+export const prepareClickableWords = ({ text, action }) => {
+  const words = text.split(' ');
+
+  return words.map((word, index) => {
+    const isClickable = wordsExplanationDictionary[word.toLowerCase()] || false;
+    const wordWithPostfix = isClickable ? `${word} ${isClickable} ` : word;
+
+    return isClickable ? (
+      <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action(word)}>
+        {wordWithPostfix}
+      </span>
+    ) : (
+      <span key={`non-clickable-${word}-${index}`}>{`${word} `}</span>
+    );
+  });
+};
+
+export const prepareTextElements = ({ text, title, action }) => {
   const elements = [];
   let nestedList = null;
 
@@ -9,11 +33,11 @@ export const prepareTextElements = ({ text, title }) => {
     if (t.startsWith('in:')) {
       if (!nestedList) {
         // Start a new nested list
-        nestedList = [<li key={`prepare_text_${title}_nested_${i}`}>{t.replaceAll('in:', '')}</li>];
+        nestedList = [<li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), action })}</li>];
       }
       else {
         // Continue the existing nested list
-        nestedList.push(<li key={`prepare_text_${title}_nested_${i}`}>{t.replaceAll('in:', '')}</li>);
+        nestedList.push(<li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), action })}</li>);
       }
     }
     else {
@@ -23,7 +47,7 @@ export const prepareTextElements = ({ text, title }) => {
         nestedList = null;
       }
 
-      elements.push(<li key={i}>{t}</li>);
+      elements.push(<li key={i}>{prepareClickableWords({ text: t, action })}</li>);
     }
   }
 
@@ -39,7 +63,8 @@ const Content = ({ icon, heading, text }) => (
   <div>
     <div>{icon}</div>
     <h2>{heading}</h2>
-    { text && prepareTextElements({ text, title: heading }) }
+    {/* eslint-disable-next-line no-console */}
+    { text && prepareTextElements({ text, title: heading, action: (e) => console.log('word clicked: ', e) }) }
   </div>
 );
 
