@@ -13,7 +13,7 @@ export const prepareClickableWords = ({ text, action }) => {
     const wordWithPostfix = isClickable ? `${word} ${isClickable} ` : word;
 
     return isClickable ? (
-      <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action(word)}>
+      <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word })}>
         {wordWithPostfix}
       </span>
     ) : (
@@ -59,21 +59,28 @@ export const prepareTextElements = ({ text, title, action }) => {
   return <ul>{elements}</ul>;
 };
 
-const Content = ({ icon, heading, text }) => (
+const Content = ({ icon, heading, text, action }) => (
   <div>
     <div>{icon}</div>
     <h2>{heading}</h2>
     {/* eslint-disable-next-line no-console */}
-    { text && prepareTextElements({ text, title: heading, action: (e) => console.log('word clicked: ', e) }) }
+    { text && prepareTextElements({ text, title: heading, action: ({ word }) => {
+      if ( action ) {
+        action({ word });
+      }
+      else {
+        console.log('word clicked: ', word);
+      }
+    } }) }
   </div>
 );
 
 export const Title = ({ text }) => <Content icon="Title_icon_here" heading={text} />;
 
-export const Guidance = ({ text }) => <Content icon="Guidance_icon_here" heading="Guidance" text={text} />;
+export const Guidance = ({ text, action }) => <Content action={action} icon="Guidance_icon_here" heading="Guidance" text={text} />;
 
-export const Clarification = ({ text }) => <Content icon="Clarification_icon_here" heading="Clarification" text={text} />;
+export const Clarification = ({ text, action }) => <Content action={action} icon="Clarification_icon_here" heading="Clarification" text={text} />;
 
-export const Ramadan = ({ text }) => <Content icon="Ramadan_icon_here" heading="Ramadan" text={text} />;
+export const Ramadan = ({ text, action }) => <Content action={action} icon="Ramadan_icon_here" heading="Ramadan" text={text} />;
 
-export const Marriage = ({ text }) => <Content icon="Marriage_icon_here" heading="Marriage" text={text} />;
+export const Marriage = ({ text, action }) => <Content action={action} icon="Marriage_icon_here" heading="Marriage" text={text} />;

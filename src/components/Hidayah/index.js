@@ -2,7 +2,7 @@
 import { Title, Clarification, Guidance, Marriage, Ramadan } from '@components/Content';
 import { useMemo, useState } from 'preact/hooks';
 
-export const Hidayah = ({ content, background, style }) => {
+export const Hidayah = ({ content, background, action, style }) => {
   const [activeTab, setActiveTab] = useState('Guidance');
   const tabs = useMemo(() => (['Guidance', 'Clarification', 'Ramadan', 'Marriage']), []);
 
@@ -17,10 +17,10 @@ export const Hidayah = ({ content, background, style }) => {
         ))}
       </div>
       <div>
-        {activeTab === 'Guidance' && <Guidance text={content.guidance} />}
-        {activeTab === 'Clarification' && <Clarification text={content.additionalClarifications} />}
-        {activeTab === 'Ramadan' && <Ramadan text={content.ramadanClarifications} />}
-        {activeTab === 'Marriage' && <Marriage text={content.maritalClarifications} />}
+        {activeTab === 'Guidance' && <Guidance action={action} text={content.guidance} />}
+        {activeTab === 'Clarification' && <Clarification action={action} text={content.additionalClarifications} />}
+        {activeTab === 'Ramadan' && <Ramadan action={action} text={content.ramadanClarifications} />}
+        {activeTab === 'Marriage' && <Marriage action={action} text={content.maritalClarifications} />}
       </div>
     </div>
   );
