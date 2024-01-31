@@ -46,14 +46,22 @@ export const parser = (md) => {
       const subtitle = line.replace(`${headingToken} `, '').trim();
       jsonResult[subtitle] = [];
     }
-    else if ( line.startsWith('  -') ) {
-      const content = line.replace(' -', '').trim();
-      const keys = Object.keys(jsonResult);
-      const lastKey = keys[keys.length - 1];
-      if ( !jsonResult[lastKey] ) {
-        throw Error('Paragraph must be after an h2 ## title');
+    else if (line.match(/^( {2})+( ?-)/)) {
+      const numberOfTabs = (line.match(/ {2}/g) || []).length + (line.match(/ -/g) || []).length;
+      if (numberOfTabs > 0) {
+        const content = line.replace('-', '').trim();
+        const keys = Object.keys(jsonResult);
+        const lastKey = keys[keys.length - 1];
+    
+        if (!jsonResult[lastKey]) {
+          throw Error('Paragraph must be after an h2 ## title');
+        }
+    
+        // Add 'in:' for each removed tab
+        const indentedContent = Array.from({ length: numberOfTabs - 1 }, () => 'in:').join('') + content;
+    
+        jsonResult[lastKey].push(indentedContent);
       }
-      jsonResult[lastKey].push(`in:${content}`);
     }
     else if (line.trim().startsWith('-')) {
       const content = line.replace('-', '').trim();
