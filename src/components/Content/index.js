@@ -16,71 +16,82 @@ export const prepareClickableWords = ({ text, action }) => {
       <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word })}>
         {wordWithPostfix}
       </span>
-    ) : (
-      <span key={`non-clickable-${word}-${index}`}>{`${word} `}</span>
-    );
+    ) : (`${word} `);
   });
+};
+
+const arrayToHtml = (arr) => {
+  // Helper function to convert an inner array to an HTML string
+  const innerArrayToHtml = (innerArr) => (<ul>
+    {innerArr.map(item => (Array.isArray(item) ? innerArrayToHtml(item) : item ))}
+  </ul>);
+
+  // Convert the main array to an HTML string
+  const mainHtml = <ul>{arr.map(item => (Array.isArray(item) ? innerArrayToHtml(item) : item ))}</ul>;
+
+  return mainHtml;
 };
 
 export const prepareTextElements = ({ text, title, action }) => {
   const elements = [];
-  let nestedList = null;
+  const currentDepths = [];
+  const depthIndexMap = {};
+  let prevDepth = 0;
 
   for (let i = 0; i < text.length; i++) {
     const t = text[i];
+    const depth = (t.match(/in:/g) || []).length;
 
-    // If we have a list inside our main list
-    if (t.startsWith('in:')) {
-      if (!nestedList) {
-        // Start a new nested list
-        nestedList = [<li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), action })}</li>];
-      }
-      else {
-        // Continue the existing nested list
-        nestedList.push(<li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), action })}</li>);
-      }
+    const nestedItem = <li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), action })}</li>;
+
+    if ( depth < prevDepth ) {
+      currentDepths.splice(currentDepths.indexOf(prevDepth), 1);
+      delete depthIndexMap[prevDepth];
+    }
+
+    if ( depth === 0 ) {
+      elements.push(nestedItem);
+    }
+    else if ( currentDepths.includes(depth) ) {
+      depthIndexMap[depth].push(nestedItem);
+    }
+    else if ( prevDepth !== 0 && depth > prevDepth ) {
+      currentDepths.push(depth);
+      depthIndexMap[prevDepth].push([nestedItem]);
+      depthIndexMap[depth] = depthIndexMap[prevDepth][depthIndexMap[prevDepth].length - 1];
     }
     else {
-      // If we have an open nested list, close it before adding the current item
-      if (nestedList) {
-        elements.push(<ul key={`prepare_text_${title}_main_${i}`}>{nestedList}</ul>);
-        nestedList = null;
-      }
-
-      elements.push(<li key={i}>{prepareClickableWords({ text: t, action })}</li>);
+      currentDepths.push(depth);
+      elements.push([nestedItem]);
+      depthIndexMap[depth] = elements[elements.length - 1];
     }
+    prevDepth = depth;
   }
 
-  // If there's an open nested list, close it at the end
-  if (nestedList) {
-    elements.push(<ul key={text.length}>{nestedList}</ul>);
-  }
-
-  return <ul>{elements}</ul>;
+  return (arrayToHtml(elements));
 };
 
-const Content = ({ icon, heading, text, action }) => (
+const Content = ({ heading, text, action, showInnerTitle }) => (
   <div>
-    <div>{icon}</div>
-    <h2>{heading}</h2>
-    {/* eslint-disable-next-line no-console */}
+    { showInnerTitle && <h3>{heading}</h3>}
     { text && prepareTextElements({ text, title: heading, action: ({ word }) => {
       if ( action ) {
         action({ word });
       }
       else {
+        {/* eslint-disable-next-line no-console */}
         console.log('word clicked: ', word);
       }
     } }) }
   </div>
 );
 
-export const Title = ({ text }) => <Content icon="Title_icon_here" heading={text} />;
+export const Title = ({ text }) => <h2>{text}</h2>;
 
-export const Guidance = ({ text, action }) => <Content action={action} icon="Guidance_icon_here" heading="Guidance" text={text} />;
+export const Guidance = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Guidance" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
 
-export const Clarification = ({ text, action }) => <Content action={action} icon="Clarification_icon_here" heading="Clarification" text={text} />;
+export const Clarification = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Clarification" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
 
-export const Ramadan = ({ text, action }) => <Content action={action} icon="Ramadan_icon_here" heading="Ramadan" text={text} />;
+export const Ramadan = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Ramadan" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
 
-export const Marriage = ({ text, action }) => <Content action={action} icon="Marriage_icon_here" heading="Marriage" text={text} />;
+export const Marriage = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Marriage" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
