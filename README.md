@@ -17,9 +17,9 @@ Muslimah is an open-source NPM library that offers a comprehensive collection of
 
 ## Content
 
-1. [Indetermined Ruling On Initial Bleeding](contents/hanafi/en/1_indetermined_ruling_on_initial_bleeding.md)
-2. [Indetermined Ruling For Subsequent Bleedings](contents/hanafi/en/2_indetermined_ruling_for_subsequent_bleedings.md)
-3. [Indetermined Ruling For Present Cycle](contents/hanafi/en/3_indetermined_ruling_for_present_cycle.md)
+1. [Indetermined Ruling On Initial Bleeding](contents/hanafi/en/1_indeterminate_ruling_on_initial_bleeding.md)
+2. [Indetermined Ruling For Subsequent Bleedings](contents/hanafi/en/2_indeterminate_ruling_for_subsequent_bleedings.md)
+3. [Indetermined Ruling For Present Cycle](contents/hanafi/en/3_indeterminate_ruling_for_present_cycle.md)
 4. [Ruling of `Bleeding Most Likely Hayd`](contents/hanafi/en/4_ruling_bleeding_most_likely_hayd.md)
 5. [Ruling of `Ongoing Hayd` Till Habit](contents/hanafi/en/5_ruling_of_ongoing_hayd_till_habit.md)
 6. [Ruling of `Ongoing Hayd` Till 10 Days](contents/hanafi/en/6_ruling_of_ongoing_hayd_till_10_days.md)
