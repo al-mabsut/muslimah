@@ -3,7 +3,7 @@
 ## Guidance
 
 - Continue to consistently record your discharges:
-  - It is Waajib (Necessary) to log your discharges (especially in your current situation).
+  - It is Wajib to log your discharges (especially in your current situation).
   - Accurate tracking is crucial for scholars to provide effective assistance.
 
 ## Additional Clarifications

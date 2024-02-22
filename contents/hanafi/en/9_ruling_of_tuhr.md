@@ -2,7 +2,7 @@
 
 ## Guidance
 
-- These are the days in which you are able to attain ritual purity (through Wudu/Ghusl) that enables you to perform your religious observances, such as:
+- These are the days in which you are able to attain ritual purity (through Wudu / Ghusl) that enables you to perform your religious observances, such as:
   - Prayer
   - Fasting (Ramadan as well as optional fasting)
   - Quran Recitation
