@@ -1,21 +1,24 @@
 /* eslint-disable react/jsx-no-bind */
-const wordsExplanationDictionary = {
-  waajib: '(necessary)',
-  fard: '(obligatory)',
-  qadaa: '(makeup)'
-};
+import terminologies from './terminologies.json';
+import { Fragment } from 'preact';
 
 export const prepareClickableWords = ({ text, action }) => {
   const words = text.split(' ');
 
   return words.map((word, index) => {
-    const isClickable = wordsExplanationDictionary[word.toLowerCase()] || false;
-    const wordWithPostfix = isClickable ? `${word} ${isClickable} ` : word;
+    const isClickable = terminologies[word.toLowerCase().replaceAll(/[.,()]/g, '')] || false;
+    const specialChars = isClickable ? word.match(/[.,()]/g) : null;
+    const specialCharPosition = (specialChars && specialChars[0]) ? word.indexOf(specialChars[0]) : null;
+    const wordWithPostfix = isClickable ? `${word.replaceAll(/[.,()]/g, '')} (${isClickable}) ` : word;
 
     return isClickable ? (
-      <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word })}>
-        {wordWithPostfix}
-      </span>
+      <>
+        {specialCharPosition == 0 ? `${specialChars[0]} ` : ''}
+        <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word })}>
+          {wordWithPostfix}
+        </span>
+        {specialCharPosition ? `${specialChars[0]} ` : ''}
+      </>
     ) : (`${word} `);
   });
 };

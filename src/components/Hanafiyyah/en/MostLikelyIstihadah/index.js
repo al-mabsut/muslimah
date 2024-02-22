@@ -1,5 +1,5 @@
 import Hidayah from '@components/Hidayah';
-import * as content from '@hanafi/en/8_ruling_bleeding_most_likely_istihaadah.md';
+import * as content from '@hanafi/en/8_ruling_bleeding_most_likely_istihadah.md';
 import { propTypes } from '@utils/propTypes';
 
 export const MostLikelyIstihadah = ({ ...props }) => (

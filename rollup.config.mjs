@@ -7,6 +7,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import markdownContentPlugin from './plugins/markdown_plugin.js';
 import pkg from "./package.json" assert { type: 'json' };
+import json from '@rollup/plugin-json';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -25,6 +26,7 @@ export default {
       ]
     }),
     markdownContentPlugin(),
+    json(),
     postcss({
       extensions: ['.css'],
       modules: true

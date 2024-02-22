@@ -3,18 +3,18 @@
 ## Guidance
 
 - Based on the latest information provided by you, your Ongoing Hayd concluded before your latest Hayd habit.
-- Accordingly, on it's conclusion you were to perform a Ghusl (full ablution) to attain purity from the state of Hayd and resume your seasonal/daily worship as applies (Prayer and Ramadan etc.)
-- If the conclusion of Hayd was just before a Salaah (prayer) time while there was sufficient time for Ghusl (full ablution) and Takbeer-e-Tahreema remaining, perform Qadaa (makeup) for the missed Salaah (prayer). If not, Qadaa (makeup) is not required.
+- Accordingly, on it's conclusion you were to perform a Ghusl to attain purity from the state of Hayd and resume your seasonal/daily worship as applies (Prayer and Ramadan etc.)
+- If the conclusion of Hayd was just before a Salaah time while there was sufficient time for Ghusl and Takbeer-e-Tahreema remaining, perform Qadaa for the missed Salaah. If not, Qadaa is not required.
 
 ## Additional Clarifications
 
 - Since your Hayd ended earlier than usual; there is always a chance that your Hayd could still return. A precautionary Ghusl at your Hayd habit time is advisable due to the possibility of bleeding resuming within 15 days (from the conclusion of Hayd).
-- Such resuming of bleeding may end up compromising your Salaah (prayer) until you have repeated your Ghusl again. The precautionary Ghusl is therefore adviced to avoid this from happening.
+- Such resuming of bleeding may end up compromising your Salaah until you have repeated your Ghusl again. The precautionary Ghusl is therefore adviced to avoid this from happening.
 
 ## Ramadan Clarifications
 
 - If your Hayd ended during the day, then you are required to behave like a fasting person for the remainder of the day by abstaining from food, drinks and conjugal relationships.
-- If your Hayd ended during the night, such that there was enough time before Fajr for you to complete a Ghusl (full ablution) and Takbeer-e-Tahreema, then accordingly you will be required to fast that day. If no such time sufficient was remaining, then you will be considered as someone whose Hayd ended during the day and accordingly you will be required to behave like a fasting person and later on make Qadaa (makeup) of that day.
+- If your Hayd ended during the night, such that there was enough time before Fajr for you to complete a Ghusl and Takbeer-e-Tahreema, then accordingly you will be required to fast that day. If no such time sufficient was remaining, then you will be considered as someone whose Hayd ended during the day and accordingly you will be required to behave like a fasting person and later on make Qadaa of that day.
 
 ## Marital Clarifications
 

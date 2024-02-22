@@ -1,5 +1,5 @@
 import Hidayah from '@components/Hidayah';
-import * as content from '@hanafi/en/13_ruling_istihaadah.md';
+import * as content from '@hanafi/en/13_ruling_istihadah.md';
 import { propTypes } from '@utils/propTypes';
 
 export const Istihadah = ({ ...props }) => (

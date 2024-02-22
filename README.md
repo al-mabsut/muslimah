@@ -24,12 +24,12 @@ Muslimah is an open-source NPM library that offers a comprehensive collection of
 5. [Ruling of `Ongoing Hayd` Till Habit](contents/hanafi/en/5_ruling_of_ongoing_hayd_till_habit.md)
 6. [Ruling of `Ongoing Hayd` Till 10 Days](contents/hanafi/en/6_ruling_of_ongoing_hayd_till_10_days.md)
 7. [Ruling of `Hayd`](contents/hanafi/en/7_ruling_of_hayd.md)
-8. [Ruling of `Bleeding Most Likely Istihadah`](contents/hanafi/en/8_ruling_bleeding_most_likely_istihaadah.md)
+8. [Ruling of `Bleeding Most Likely Istihadah`](contents/hanafi/en/8_ruling_bleeding_most_likely_istihadah.md)
 9. [Ruling of `Tuhr`](contents/hanafi/en/9_ruling_of_tuhr.md)
 10. [Ruling of `Most Likely Tuhr` Concluding `Ongoing Hayd` Before Habit Completion](contents/hanafi/en/10_ruling_most_likely_tuhr_concluding_ongoing_hayd_before_habit_completion.md)
 11. [Ruling of `Most Likely Tuhr` Concluding `Ongoing Hayd` Before 10 Days](contents/hanafi/en/11_ruling_most_likely_tuhr_concluding_ongoing_hayd_before_10_days.md)
 12. [Ruling of `Tuhr` Concluding `Ongoing Bleeding` That Exceeds 10 Days](contents/hanafi/en/12_ruling_tuhr_concluding_ongoing_bleeding_exceeding_10_days.md)
-13. [Ruling of `Istihadah`](contents/hanafi/en/13_ruling_istihaadah.md)
+13. [Ruling of `Istihadah`](contents/hanafi/en/13_ruling_istihadah.md)
 
 Guidelines to edit/contribute to more content:
 
