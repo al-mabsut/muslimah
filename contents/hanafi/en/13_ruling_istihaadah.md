@@ -17,6 +17,6 @@
 
 - This bleeding has no religious implications on fasting
 
-## Martial Clarifications
+## Marital Clarifications
 
 - Conjugal relationships are permissible, despite the bleeding

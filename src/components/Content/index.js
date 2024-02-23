@@ -22,7 +22,8 @@ export const prepareClickableWords = ({ text, action }) => {
 
 const arrayToHtml = (arr) => {
   // Helper function to convert an inner array to an HTML string
-  const innerArrayToHtml = (innerArr) => (<ul>
+  // If the list is number list just hide the marker ( as the text already includes the number )
+  const innerArrayToHtml = (innerArr) => (<ul style={innerArr[0]?.props.children[0].trim().match(/^( ?\d\.)/) ? { listStyle: 'none' } : ''}>
     {innerArr.map(item => (Array.isArray(item) ? innerArrayToHtml(item) : item ))}
   </ul>);
 
