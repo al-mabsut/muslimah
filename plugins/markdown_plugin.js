@@ -46,10 +46,12 @@ export const parser = (md) => {
       const subtitle = line.replace(`${headingToken} `, '').trim();
       jsonResult[subtitle] = [];
     }
-    else if (line.match(/^( {2})+( ?-)/)) {
-      const numberOfTabs = (line.match(/ {2}/g) || []).length + (line.match(/ -/g) || []).length;
+    else if (line.match(/^( {2})+( ?-)/) || line.match(/^( {2})+( ?\d\.)/)) { // Match inner list and numbers
+      const isNonNumberList = line.match(/^( {2})+( ?-)/);
+      // eslint-disable-next-line max-len
+      const numberOfTabs = (line.match(/ {2}/g) || []).length + ((isNonNumberList ? line.match(/ -/g) : line.match(/\d\./g)) || []).length;
       if (numberOfTabs > 0) {
-        const content = line.replace('-', '').trim();
+        const content = isNonNumberList ? line.replace('-', '').trim() : line.trim();
         const keys = Object.keys(jsonResult);
         const lastKey = keys[keys.length - 1];
     
