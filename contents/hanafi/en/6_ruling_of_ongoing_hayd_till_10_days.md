@@ -8,7 +8,7 @@
     - ‘Asr: About 20 minutes before sunset when the sun turns pale yellow.
     - Maghrib: When many stars are visible, but with Western horizon still red.
     - ‘Isha: At the midpoint between Maghrib and Fajr.
-- Each time your bleeding stops, before engaging in any act of worship such as prayer, Quran, fasting etc. you are required to do Ghusl (full ablution)
+- Each time your bleeding stops, before engaging in any act of worship such as prayer, Quran, fasting etc. you are required to do Ghusl
 
 ## Ramadan Clarifications
 
