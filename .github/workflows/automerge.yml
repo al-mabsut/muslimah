@@ -1,0 +1,95 @@
+name: Auto Merge on Green Checks with Label
+
+on:
+  pull_request:
+    types:
+      - labeled
+  check_suite:
+    types: [completed]
+  status: {}
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup npm/node leveraging full caching
+        uses: ./.github/setup-npm-with-caching
+
+      - name: Check workflows status
+        uses: actions/github-script@v7
+        id: check_status
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const pull_number = context.payload.pull_request.number;
+            const sha = context.payload.pull_request.head.sha;
+  
+            const { data: statuses } = await github.request('GET /repos/:owner/:repo/commits/:sha/check-runs', {
+              owner,
+              repo,
+              sha
+            });
+            
+            const actionStatuses = statuses.check_runs.map(checkRun => ({
+              name: checkRun.name,
+              conclusion: checkRun.conclusion
+            }));
+
+            console.log('actionStatuses', actionStatuses);
+            
+            const currentActionName = 'automerge';
+            
+            const isAllChecksArePassed = statuses.check_runs
+              .filter(checkRun => checkRun.name !== currentActionName)
+              .every(checkRun => checkRun.conclusion === 'success');
+
+            console.log('The returned status of the tests is : ', isAllChecksArePassed);
+  
+            return isAllChecksArePassed;
+
+      - name: Get result of prev step
+        run: echo "${{steps.check_status.outputs.result}}"
+
+      - name: Check if automerge label is == true
+        run: echo "${{contains(github.event.pull_request.labels.*.name, 'automerge') == true }}"
+
+      - name: Check if result like label is == true
+        run: echo "${{contains(steps.check_status.outputs.result, true) == true }}"
+
+      - name: Merge Pull Requests with automerge label
+        uses: actions/github-script@v7
+        if: ${{ (contains(steps.check_status.outputs.result, true)) && (contains(github.event.pull_request.labels.*.name, 'automerge')) }}
+        with:
+          github-token: ${{ secrets.AUTOMERGE_PAT }}
+          script: |
+            const { owner, repo } = context.repo;
+            const pull_number = context.payload.pull_request.number;
+            const merge_method = 'rebase'; // Can be 'merge', 'squash' or 'rebase'   
+
+            // Fetch PR details
+            const { data: pullRequest } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number,
+            });
+
+            console.log('Running automerge', pullRequest.state, pullRequest.mergeable_state);
+
+            const acceptableMergeableStates = ['clean', 'has_hooks', 'unknown', 'unstable', 'blocked'];
+
+            if (pullRequest.state === 'open' && acceptableMergeableStates.includes(pullRequest.mergeable_state)) {
+              console.log(`Merging PR #${pull_number} with 'automerge' label`);
+
+              // Attempt to merge the PR
+              await github.rest.pulls.merge({
+                owner,
+                repo,
+                pull_number,
+                merge_method,
+              });
+            } else {
+              console.log(`PR #${pull_number} does not meet auto-merge criteria`);
+            }
