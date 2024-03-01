@@ -4,7 +4,7 @@
 
 [Github Pages](https://al-mabsut.github.io/muslimah/)
 
-## About Muslimah
+## About Muslimah 
 
 Muslimah is an open-source NPM library that offers a comprehensive collection of components and resources pertaining to Islamic jurisprudence, with a particular focus on *masaail* (issues) relevant to women. It aims to be a centralized, authoritative source of knowledge that is subject to public scrutiny by the scholarly community.
 
