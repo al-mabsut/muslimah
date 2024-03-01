@@ -1,6 +1,6 @@
 # Muslimah: Islamic Jurisprudence resources for Women
 
-## See Live Content
+## See Live Content 
 
 [Github Pages](https://al-mabsut.github.io/muslimah/)
 
