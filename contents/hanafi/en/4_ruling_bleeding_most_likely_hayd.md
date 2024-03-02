@@ -4,7 +4,7 @@
 
 - Your latest recorded discharges may soon qualify as Hayd, although they haven't yet surpassed the 72-hour threshold.
 - Everytime the bleeding discontinues such that you are not sure if it will come back later or if it has completely stopped, it's Wajib to complete your Salaah at the latest permissible times:
-  - For Fajr and Dhuhur: Pray at the last possible moment.
+  - For Fajr and Dhuhr: Pray at the last possible moment.
   - For ‘Asr, Maghrib, and ‘Isha: Pray before Makrooh time, defined as:
     - ‘Asr: About 20 minutes before sunset when the sun turns pale yellow.
     - Maghrib: When many stars are visible, but with Western horizon still red.

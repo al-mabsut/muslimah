@@ -11,7 +11,7 @@ const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, p
   }
 
   return (<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', padding: '1%', backgroundColor: '#ddd' }} className={popUpClassName}>
-    <h3>{popUpModalWord} {`(${terminologies[popUpModalWord.toLowerCase()]})`}</h3>
+    <h3>{popUpModalWord} {`(${terminologies[popUpModalWord.toLowerCase()].clarification.en})`}</h3>
     <p>Description/Explanation coming soon inshallah</p>
     <button style={{ position: 'absolute', top: '1%', right: '1%' }} onClick={() => setDisplayPopUpModal(false)}>X</button>
   </div>);
