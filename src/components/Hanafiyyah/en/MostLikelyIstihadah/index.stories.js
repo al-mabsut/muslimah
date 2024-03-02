@@ -2,10 +2,7 @@ import { MostLikelyIstihadah } from '@components/Hanafiyyah/en/MostLikelyIstihad
 
 export default {
   title: 'MostLikelyIstihadah',
-  component: MostLikelyIstihadah,
-  argTypes: {
-    action: { action: 'action' }
-  }
+  component: MostLikelyIstihadah
 };
 
 const Template = (args) => (<MostLikelyIstihadah {...args} />);
@@ -34,4 +31,10 @@ Default.args = {
   clarificationIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   ramadanIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   marriageIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png'
+};
+
+export const overrideAction = Template.bind({});
+overrideAction.args = Default.args;
+overrideAction.argTypes = {
+  action: { action: 'action' }
 };

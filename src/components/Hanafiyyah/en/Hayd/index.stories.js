@@ -2,10 +2,7 @@ import { Hayd } from '@components/Hanafiyyah/en/Hayd';
 
 export default {
   title: 'Hayd',
-  component: Hayd,
-  argTypes: {
-    action: { action: 'action' }
-  }
+  component: Hayd
 };
 
 const Template = (args) => (<Hayd {...args} />);
@@ -34,4 +31,10 @@ Default.args = {
   clarificationIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   ramadanIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   marriageIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png'
+};
+
+export const overrideAction = Template.bind({});
+overrideAction.args = Default.args;
+overrideAction.argTypes = {
+  action: { action: 'action' }
 };
