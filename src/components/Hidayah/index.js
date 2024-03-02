@@ -2,11 +2,27 @@
 import { Title, Clarification, Guidance, Marriage, Ramadan } from '@components/Content';
 import { useMemo, useState } from 'preact/hooks';
 import PropTypes from 'prop-types';
+import terminologies from '@components/Content/terminologies.json';
+import { Fragment } from 'preact';
+
+const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, popUpModalWord }) => {
+  if ( !displayPopUpModal ) {
+    return <></>;
+  }
+
+  return (<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', padding: '1%', backgroundColor: '#ddd' }} className={popUpClassName}>
+    <h3>{popUpModalWord} {`(${terminologies[popUpModalWord.toLowerCase()]})`}</h3>
+    <p>Description/Explanation coming soon inshallah</p>
+    <button style={{ position: 'absolute', top: '1%', right: '1%' }} onClick={() => setDisplayPopUpModal(false)}>X</button>
+  </div>);
+};
 
 const Hidayah = ({ content, action, style, className, tabsContainerClassName, tabClassName, contentClassName,
-  showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true, guidanceIcon,
-  clarificationIcon, ramadanIcon, marriageIcon } = {}) => {
+  popUpClassName, showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true,
+  guidanceIcon, clarificationIcon, ramadanIcon, marriageIcon } = {}) => {
   const [activeTab, setActiveTab] = useState('Guidance');
+  const [displayPopUpModal, setDisplayPopUpModal] = useState();
+  const [popUpModalWord, setPopUpModalTerm] = useState();
   const tabs = useMemo(() => (['Guidance', 'Clarification', 'Ramadan', 'Marriage']), []);
 
   const getIcon = ({ tab }) => {
@@ -22,6 +38,11 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
     default:
       throw new Error(`[Developer Error] No icon provided for the tab: "${tab}". Make sure pass the right tab name`);
     }
+  };
+
+  const alternativeAction = ({ word }) => {
+    setDisplayPopUpModal(true);
+    setPopUpModalTerm(word);
   };
 
   const handleTabClick = (tab) => setActiveTab(tab);
@@ -41,11 +62,13 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
           </button>
         ))}
       </div>
+      {/* eslint-disable-next-line max-len */}
+      <PopUpModal popUpClassName={popUpClassName} displayPopUpModal={displayPopUpModal} popUpModalWord={popUpModalWord} setDisplayPopUpModal={setDisplayPopUpModal} />
       <div className={contentClassName || ''}>
-        {activeTab === 'Guidance' && <Guidance action={action} text={content.guidance} showInnerTitle={showInnerTitle} />}
-        {activeTab === 'Clarification' && <Clarification action={action} text={content.additionalClarifications} showInnerTitle={showInnerTitle} />}
-        {activeTab === 'Ramadan' && <Ramadan action={action} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} />}
-        {activeTab === 'Marriage' && <Marriage action={action} text={content.maritalClarifications} showInnerTitle={showInnerTitle} />}
+        {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} />}
+        {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} />}
+        {activeTab === 'Ramadan' && <Ramadan action={action ? action : alternativeAction} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} />}
+        {activeTab === 'Marriage' && <Marriage action={action ? action : alternativeAction} text={content.maritalClarifications} showInnerTitle={showInnerTitle} />}
       </div>
     </div>
   );

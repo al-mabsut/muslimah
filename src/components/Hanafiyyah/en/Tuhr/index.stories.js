@@ -4,7 +4,6 @@ export default {
   title: 'Tuhr',
   component: Tuhr,
   argTypes: {
-    action: { action: 'action' },
     scenario: {
       options: ['complete', 'concludes-excess-10-day-bleeding'],
       control: { type: 'radio' }
@@ -39,4 +38,10 @@ Default.args = {
   clarificationIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   ramadanIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   marriageIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png'
+};
+
+export const overrideAction = Template.bind({});
+overrideAction.args = Default.args;
+overrideAction.argTypes = {
+  action: { action: 'action' }
 };

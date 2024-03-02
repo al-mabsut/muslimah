@@ -14,7 +14,7 @@ export const prepareClickableWords = ({ text, action }) => {
     return isClickable ? (
       <>
         {specialCharPosition == 0 ? `${specialChars[0]} ` : ''}
-        <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word })}>
+        <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word: word.replaceAll(/[.,()]/g, '') })}>
           {wordWithPostfix}
         </span>
         {specialCharPosition ? `${specialChars[0]} ` : ''}

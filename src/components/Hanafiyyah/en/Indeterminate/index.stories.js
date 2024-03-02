@@ -4,7 +4,6 @@ export default {
   title: 'Indeterminate',
   component: Indeterminate,
   argTypes: {
-    action: { action: 'action' },
     scenario: {
       options: ['subsequent-bleedings', 'initial-bleeding', 'present-cycle'],
       control: { type: 'radio' }
@@ -39,4 +38,10 @@ Default.args = {
   clarificationIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   ramadanIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   marriageIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png'
+};
+
+export const overrideAction = Template.bind({});
+overrideAction.args = Default.args;
+overrideAction.argTypes = {
+  action: { action: 'action' }
 };
