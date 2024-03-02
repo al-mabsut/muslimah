@@ -6,7 +6,7 @@ export const prepareClickableWords = ({ text, action }) => {
   const words = text.split(' ');
 
   return words.map((word, index) => {
-    const isClickable = terminologies[word.toLowerCase().replaceAll(/[.,()]/g, '')] || false;
+    const isClickable = terminologies[word.toLowerCase().replaceAll(/[.,()]/g, '')]?.clarification?.en || false;
     const specialChars = isClickable ? word.match(/[.,()]/g) : null;
     const specialCharPosition = (specialChars && specialChars[0]) ? word.indexOf(specialChars[0]) : null;
     const wordWithPostfix = isClickable ? `${word.replaceAll(/[.,()]/g, '')} (${isClickable}) ` : word;

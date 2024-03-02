@@ -3,7 +3,7 @@
 ## Guidance
 
 - When unsure if bleeding has fully ceased or will resume, it's Mustahabb to complete your Salaah at the latest permissible times:
-  - For Fajr and Dhuhur: Pray at the last possible moment.
+  - For Fajr and Dhuhr: Pray at the last possible moment.
   - For ‘Asr, Maghrib, and ‘Isha: Pray before Makrooh time, defined as:
     - ‘Asr: About 20 minutes before sunset when the sun turns pale yellow.
     - Maghrib: When many stars are visible, but with Western horizon still red.
