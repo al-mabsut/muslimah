@@ -22,7 +22,7 @@
       "en": "dawn prayer"
     },
     "level": "basic"
-  }, 
+  },
   "fard": {
     "clarification": {
       "en": "obligatory"
@@ -101,6 +101,12 @@
     },
     "level": "advanced"
   },
+  "quran": {
+    "clarification": {
+      "en": "the final revalation of Allah to mankind, as dictated to the final Prophet, Muhammad (peace be upon him)"
+    },
+    "level": "basic"
+  },
   "ramadan": {
     "clarification": {
       "en": "fasting month"
@@ -136,6 +142,12 @@
       "en": "circumambulation around the Kabah"
     },
     "level": "basic"
+  },
+  "tilawah": {
+    "clarification": {
+      "en": "audible recitation"
+    },
+    "level": "advanced"
   },
   "tuhr": {
     "clarification": {
