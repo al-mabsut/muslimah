@@ -7,7 +7,7 @@
   - Despite this bleeding, you are still required to observe your daily prayers and fasting
   - If this bleeding is continuous, then you are to wait with praying until the bleeding subsides.
     - However, if the time of Salaah is about to expire, then one should do a Wudu and pray as normal.
-  - If the bleeding continuous such that it encompasses an entire Salaah time, from beginning till the end such that in between there is not sufficient time to do Wudu and complete a prayer, then the ruling of Ma’dhur will apply to you, which you can read in more detail here: ...
+  - If the bleeding continuous such that it encompasses an entire Salaah time, from beginning till the end such that in between there is not sufficient time to do Wudu and complete a prayer, then the ruling of Ma’dhur will apply to you as detailed in this link: https://mensesmatters.org/rulings-for-the-excused-madhur
 
 ## Additional Clarifications
 

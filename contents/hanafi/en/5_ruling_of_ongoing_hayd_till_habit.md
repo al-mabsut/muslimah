@@ -7,7 +7,7 @@
   - For ‘Asr, Maghrib, and ‘Isha: Pray before Makrooh time, defined as:
     - ‘Asr: About 20 minutes before sunset when the sun turns pale yellow.
     - Maghrib: When many stars are visible, but with Western horizon still red.
-    - ‘Isha: At the midpoint between Maghrib and Fajr.
+    - ‘Isha: At the midpoint between Maghrib and Fajr for men able to attend Salaah in congregation. For women, this does not apply so for her it is Mustahabb to complete ‘Isha at the last possible moment.
 - Each time your bleeding stops, before engaging in any act of worship such as prayer, Quran, fasting etc. you are required to do Ghusl
 
 ## Ramadan Clarifications

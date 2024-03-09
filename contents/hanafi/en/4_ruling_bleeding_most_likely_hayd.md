@@ -8,7 +8,7 @@
   - For ‘Asr, Maghrib, and ‘Isha: Pray before Makrooh time, defined as:
     - ‘Asr: About 20 minutes before sunset when the sun turns pale yellow.
     - Maghrib: When many stars are visible, but with Western horizon still red.
-    - ‘Isha: At the midpoint between Maghrib and Fajr.
+    - ‘Isha: At the midpoint between Maghrib and Fajr for men able to attend Salaah in congregation. For women, this does not apply so she will complete ‘Isha at the last possible moment.
 - Once the minimum quota for Hayd has been met, then all the Ahkaam related to Hayd will apply. Ensure to make a proper record once your bleeding has exceeded 72 hours.
 - If bleeding stops for more than 15 days, and is shorter than 3 days, it's considered Istihadah, requiring Qadaa of missed Salaah during these days you were advised not to pray by us.
 
