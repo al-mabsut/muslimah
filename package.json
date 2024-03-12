@@ -48,7 +48,7 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@storybook/addon-essentials": "^7.6.6",
     "@storybook/addon-interactions": "^7.6.6",
-    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-links": "^8.0.0",
     "@storybook/blocks": "^7.6.6",
     "@storybook/preact": "^7.6.6",
     "@storybook/preact-vite": "^7.6.6",
