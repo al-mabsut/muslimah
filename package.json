@@ -52,7 +52,7 @@
     "@storybook/blocks": "^7.6.6",
     "@storybook/preact": "^7.6.6",
     "@storybook/preact-vite": "^7.6.6",
-    "@storybook/test": "^7.6.6",
+    "@storybook/test": "^8.0.0",
     "@testing-library/preact": "^3.2.3",
     "babel-jest": "^29.7.0",
     "babel-plugin-jsx-pragmatic": "^1.0.2",
