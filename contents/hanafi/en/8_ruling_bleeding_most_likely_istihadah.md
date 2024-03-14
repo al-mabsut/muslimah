@@ -9,7 +9,7 @@
     - Reciting Quran.
     - Performing Tawaaf in Hajj / Umrah.
 - Renew Wudu whenever bleeding/spotting occurs. If this happens during Salaah, the prayer breaks and must be restarted.
-- If bleeding frequency prevents completion of Salaah, follow the guidelines for Ma’dhur as detailed in this link: <https://mensesmatters.org/rulings-for-the-excused-madhur>
+- If bleeding frequency prevents completion of Salaah, follow the guidelines for Ma’dhur as detailed in this link: https://mensesmatters.org/rulings-for-the-excused-madhur
 
 ## Additional Clarifications
 
@@ -22,4 +22,4 @@
 
 ## Marital Clarifications
 
-- One ought to abstain from conjugal relationships during this time. For more information, kindly follow this link: <https://mensesmatters.org/intercourse-during-early-blood/>
+- One ought to abstain from conjugal relationships during this time. For more information, kindly follow this link: https://mensesmatters.org/intercourse-during-early-blood/

@@ -11,6 +11,11 @@ export const prepareClickableWords = ({ text, action }) => {
     const specialCharPosition = (specialChars && specialChars[0]) ? word.indexOf(specialChars[0]) : null;
     const wordWithPostfix = isClickable ? `${word.replaceAll(/[.,()]/g, '')} (${isClickable}) ` : word;
 
+    if ( word.includes('http') ) {
+      // eslint-disable-next-line react/jsx-no-target-blank
+      return <a href={word} target="_blank">{word}</a>;
+    }
+
     return isClickable ? (
       <>
         {specialCharPosition == 0 ? `${specialChars[0]} ` : ''}
