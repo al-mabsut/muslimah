@@ -4,12 +4,13 @@ import { Fragment } from 'preact';
 
 export const prepareClickableWords = ({ text, action }) => {
   const words = text.split(' ');
+  const regexCharsToRemove = /[:.,()]/g;
 
   return words.map((word, index) => {
-    const isClickable = terminologies[word.toLowerCase().replaceAll(/[.,()]/g, '')]?.clarification?.en || false;
-    const specialChars = isClickable ? word.match(/[.,()]/g) : null;
+    const isClickable = terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')]?.clarification?.en || false;
+    const specialChars = isClickable ? word.match(regexCharsToRemove) : null;
     const specialCharPosition = (specialChars && specialChars[0]) ? word.indexOf(specialChars[0]) : null;
-    const wordWithPostfix = isClickable ? `${word.replaceAll(/[.,()]/g, '')} (${isClickable}) ` : word;
+    const wordWithPostfix = isClickable ? `${word.replaceAll(regexCharsToRemove, '')} (${isClickable}) ` : word;
 
     if ( word.includes('http') ) {
       // eslint-disable-next-line react/jsx-no-target-blank
@@ -19,7 +20,7 @@ export const prepareClickableWords = ({ text, action }) => {
     return isClickable ? (
       <>
         {specialCharPosition == 0 ? `${specialChars[0]} ` : ''}
-        <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word: word.replaceAll(/[.,()]/g, '') })}>
+        <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word: word.replaceAll(regexCharsToRemove, '') })}>
           {wordWithPostfix}
         </span>
         {specialCharPosition ? `${specialChars[0]} ` : ''}
@@ -31,7 +32,7 @@ export const prepareClickableWords = ({ text, action }) => {
 const arrayToHtml = (arr) => {
   // Helper function to convert an inner array to an HTML string
   // If the list is number list just hide the marker ( as the text already includes the number )
-  const innerArrayToHtml = (innerArr) => (<ul style={innerArr[0]?.props.children[0].trim().match(/^( ?\d\.)/) ? { listStyle: 'none' } : ''}>
+  const innerArrayToHtml = (innerArr) => (<ul style={typeof(innerArr[0]?.props?.children[0]) === 'string' && innerArr[0]?.props.children[0].trim().match(/^( ?\d\.)/) ? { listStyle: 'none' } : {}}>
     {innerArr.map(item => (Array.isArray(item) ? innerArrayToHtml(item) : item ))}
   </ul>);
 
