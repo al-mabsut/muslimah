@@ -1,6 +1,6 @@
 {
   "name": "@al-mabsut/muslimah",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Shari' ahkaam related to muslim women matters",
   "main": "dist/cjs/bundle.js",
   "module": "dist/esm/bundle.js",
