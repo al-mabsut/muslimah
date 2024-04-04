@@ -1,9 +1,11 @@
+/* eslint-disable max-len */
 /* eslint-disable react/jsx-no-bind */
 import { Title, Clarification, Guidance, Marriage, Ramadan } from '@components/Content';
 import { useMemo, useState } from 'preact/hooks';
 import PropTypes from 'prop-types';
 import terminologies from '@components/Content/terminologies.json';
 import { Fragment } from 'preact';
+import { LEVELS } from '@utils/constants';
 
 const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, popUpModalWord }) => {
   if ( !displayPopUpModal ) {
@@ -17,12 +19,50 @@ const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, p
   </div>);
 };
 
+const Levels = ({ level, setLevel }) => (<div>
+  { LEVELS && LEVELS.map((lvl) => (
+    <>
+      <input type="radio" id={lvl} name={lvl} value={lvl} checked={lvl === level} onChange={() => setLevel(lvl)} />
+      <label key={lvl} for={lvl}>{lvl}</label>
+    </>
+  ))}
+</div>);
+
+const SettingsModal = ({ settings, setSettings, hideModal, settingsModalClassName }) => (<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', padding: '1%', backgroundColor: '#ddd' }} className={settingsModalClassName || ''}>
+  <button style={{ position: 'absolute', top: '1%', right: '1%', zIndex: 1 }} onClick={hideModal}>X</button>
+  <h3>Settings</h3>
+  <h4>Levels:</h4>
+  <Levels level={settings.level} setLevel={(newLevel) => setSettings((old) => {
+    old.level = newLevel;
+    return { ...old };
+  })}
+  />
+</div>);
+
+const Settings = ({ settings, setSettings, settingsClassName, settingsModalClassName, settingsIcon }) => {
+  const [displaySettingsModal, setDisplaySettingsModal] = useState();
+
+  return (
+    <div className={settingsClassName || ''}>
+      <button style={{ position: 'absolute', top: '20px', right: '20px' }} onClick={() => setDisplaySettingsModal((old) => !old)}>
+        { typeof(settingsIcon) === 'string' ?
+          <img width="25px" height="25px" src={settingsIcon} alt={`settings_icon`} /> :
+          settingsIcon }
+      </button>
+      { displaySettingsModal && <SettingsModal settings={settings} setSettings={setSettings} hideModal={() => setDisplaySettingsModal(false)} settingsModalClassName={settingsModalClassName} /> }
+    </div>
+  );
+};
+
 const Hidayah = ({ content, action, style, className, tabsContainerClassName, tabClassName, contentClassName,
-  popUpClassName, showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true,
-  guidanceIcon, clarificationIcon, ramadanIcon, marriageIcon } = {}) => {
+  popUpClassName, settingsClassName, settingsModalClassName, showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true,
+  guidanceIcon, clarificationIcon, ramadanIcon, marriageIcon, settingsIcon } = {}) => {
   const [activeTab, setActiveTab] = useState('Guidance');
   const [displayPopUpModal, setDisplayPopUpModal] = useState();
   const [popUpModalWord, setPopUpModalTerm] = useState();
+  const [settings, setSettings] = useState({
+    level: 'newcomer'
+  });
   const tabs = useMemo(() => (['Guidance', 'Clarification', 'Ramadan', 'Marriage']), []);
 
   const getIcon = ({ tab }) => {
@@ -49,6 +89,7 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
 
   return (
     <div className={className || ''} style={{ ...style }}>
+      <Settings settings={settings} setSettings={setSettings} settingsClassName={settingsClassName} settingsModalClassName={settingsModalClassName} settingsIcon={settingsIcon} />
       { showTitle && <Title text={content.title} />}
       <div className={tabsContainerClassName || ''}>
         {tabs && tabs.map((tab) => (
@@ -65,10 +106,10 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
       {/* eslint-disable-next-line max-len */}
       <PopUpModal popUpClassName={popUpClassName} displayPopUpModal={displayPopUpModal} popUpModalWord={popUpModalWord} setDisplayPopUpModal={setDisplayPopUpModal} />
       <div className={contentClassName || ''}>
-        {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} />}
-        {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} />}
-        {activeTab === 'Ramadan' && <Ramadan action={action ? action : alternativeAction} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} />}
-        {activeTab === 'Marriage' && <Marriage action={action ? action : alternativeAction} text={content.maritalClarifications} showInnerTitle={showInnerTitle} />}
+        {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} settings={settings} />}
+        {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} settings={settings} />}
+        {activeTab === 'Ramadan' && <Ramadan action={action ? action : alternativeAction} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} settings={settings} />}
+        {activeTab === 'Marriage' && <Marriage action={action ? action : alternativeAction} text={content.maritalClarifications} showInnerTitle={showInnerTitle} settings={settings} />}
       </div>
     </div>
   );
@@ -81,6 +122,9 @@ Hidayah.propTypes = {
   className: PropTypes.string,
   tabClassName: PropTypes.string,
   contentClassName: PropTypes.string,
+  popUpClassName: PropTypes.string,
+  settingsClassName: PropTypes.string,
+  settingsModalClassName: PropTypes.string,
   showTitle: PropTypes.bool,
   showTabsTitle: PropTypes.bool,
   showTabsIcons: PropTypes.bool,
@@ -98,6 +142,10 @@ Hidayah.propTypes = {
     PropTypes.element
   ]),
   marriageIcon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  settingsIcon: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
   ])

@@ -1,8 +1,15 @@
 /* eslint-disable react/jsx-no-bind */
 import terminologies from './terminologies.json';
 import { Fragment } from 'preact';
+import { LEVELS } from '@utils/constants';
 
-export const prepareClickableWords = ({ text, action }) => {
+const shouldDisplayExplanation = ({ userLevel, wordLevel }) => {
+  const userLevelIndex = LEVELS.indexOf(userLevel);
+  const wordLevelIndex = LEVELS.indexOf(wordLevel);
+  return userLevelIndex < wordLevelIndex;
+};
+
+export const prepareClickableWords = ({ text, settings, action }) => {
   const words = text.split(' ');
   const regexCharsToRemove = /[:.,()]/g;
 
@@ -10,7 +17,7 @@ export const prepareClickableWords = ({ text, action }) => {
     const isClickable = terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')]?.clarification?.en || false;
     const specialChars = isClickable ? word.match(regexCharsToRemove) : null;
     const specialCharPosition = (specialChars && specialChars[0]) ? word.indexOf(specialChars[0]) : null;
-    const wordWithPostfix = isClickable ? `${word.replaceAll(regexCharsToRemove, '')} (${isClickable}) ` : word;
+    const wordWithPostfix = isClickable ? `${word.replaceAll(regexCharsToRemove, '')} ${ shouldDisplayExplanation({ userLevel: settings.level, wordLevel: terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')].level }) ? `(${isClickable})` : ''} ` : word;
 
     if ( word.includes('http') ) {
       // eslint-disable-next-line react/jsx-no-target-blank
@@ -42,7 +49,7 @@ const arrayToHtml = (arr) => {
   return mainHtml;
 };
 
-export const prepareTextElements = ({ text, title, action }) => {
+export const prepareTextElements = ({ text, title, settings, action }) => {
   const elements = [];
   const currentDepths = [];
   const depthIndexMap = {};
@@ -52,7 +59,7 @@ export const prepareTextElements = ({ text, title, action }) => {
     const t = text[i];
     const depth = (t.match(/in:/g) || []).length;
 
-    const nestedItem = <li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), action })}</li>;
+    const nestedItem = <li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), settings, action })}</li>;
 
     if ( depth < prevDepth ) {
       currentDepths.splice(currentDepths.indexOf(prevDepth), 1);
@@ -81,10 +88,10 @@ export const prepareTextElements = ({ text, title, action }) => {
   return (arrayToHtml(elements));
 };
 
-const Content = ({ heading, text, action, showInnerTitle }) => (
+const Content = ({ heading, text, action, showInnerTitle, settings }) => (
   <div>
     { showInnerTitle && <h3>{heading}</h3>}
-    { text && prepareTextElements({ text, title: heading, action: ({ word }) => {
+    { text && prepareTextElements({ text, title: heading, settings, action: ({ word }) => {
       if ( action ) {
         action({ word });
       }
@@ -98,10 +105,10 @@ const Content = ({ heading, text, action, showInnerTitle }) => (
 
 export const Title = ({ text }) => <h2>{text}</h2>;
 
-export const Guidance = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Guidance" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
+export const Guidance = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Guidance" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;
 
-export const Clarification = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Clarification" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
+export const Clarification = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Clarification" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;
 
-export const Ramadan = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Ramadan" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
+export const Ramadan = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Ramadan" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;
 
-export const Marriage = ({ text, action, showIcons, showInnerTitle }) => <Content action={action} heading="Marriage" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} />;
+export const Marriage = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Marriage" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;

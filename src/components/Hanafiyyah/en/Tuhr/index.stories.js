@@ -30,6 +30,9 @@ Default.args = {
   className: 'testClassName',
   tabsContainerClassName: 'testTabsContainerClassName',
   tabClassName: 'testTabClassName',
+  popUpClassName: 'testPopUpClassName',
+  settingsClassName: 'testSettingsClassName',
+  settingsModalClassName: 'testSettingsModalClassName',
   showTitle: true,
   showTabsTitle: true,
   showTabsIcons: true,
@@ -37,7 +40,8 @@ Default.args = {
   guidanceIcon: <img width="25px" height="25px" src="https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png" />,
   clarificationIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   ramadanIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
-  marriageIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png'
+  marriageIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
+  settingsIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/tools-equipment-construction/setting-icon.png'
 };
 
 export const overrideAction = Template.bind({});
