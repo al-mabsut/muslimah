@@ -81,6 +81,7 @@ const commonConfig = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
+    '\\.(css|scss)$': '<rootDir>/tests/__mocks__/styleMocks.js',
     '@src(.*)$': '<rootDir>/src/$1',
     '@assets(.*)$': '<rootDir>/src/assets/$1',
     '@components(.*)$': '<rootDir>/src/components/$1',

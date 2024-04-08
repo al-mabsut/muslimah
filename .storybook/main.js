@@ -10,6 +10,7 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "storybook-css-modules",
   ],
   framework: {
     name: "@storybook/preact-vite",
@@ -53,6 +54,7 @@ const config = {
         { find: '@hanafi', replacement: path.resolve(__dirname, '../contents/hanafi/') },
         { find: '@components', replacement: path.resolve(__dirname, '../src/components/') },
         { find: '@utils', replacement: path.resolve(__dirname, '../src/utils/') },
+        { find: '@src', replacement: path.resolve(__dirname, '../src/') },
         { find: '@al-mabsut/muslimah', replacement: path.resolve(__dirname, '../node_modules/@al-mabsut/muslimah/dist/esm/bundle.js') }
       ]
     },
