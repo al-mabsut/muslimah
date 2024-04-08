@@ -1,0 +1,23 @@
+
+.popUpModal, .settingsModal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1%;
+  background-color: #ddd;
+  z-index: 1;
+}
+
+.closeModalButton{
+  position: absolute;
+  top: 1%;
+  right: 1%;
+}
+
+.settingsButton{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

@@ -2,6 +2,7 @@
 import terminologies from './terminologies.json';
 import { Fragment } from 'preact';
 import { LEVELS } from '@utils/constants';
+import style from './style.module.css';
 
 const shouldDisplayExplanation = ({ userLevel, wordLevel }) => {
   const userLevelIndex = LEVELS.indexOf(userLevel);
@@ -9,7 +10,7 @@ const shouldDisplayExplanation = ({ userLevel, wordLevel }) => {
   return userLevelIndex < wordLevelIndex;
 };
 
-export const prepareClickableWords = ({ text, settings, action }) => {
+export const prepareClickableWords = ({ text, settings, action, terminologyClassName }) => {
   const words = text.split(' ');
   const regexCharsToRemove = /[:.,()]/g;
 
@@ -27,7 +28,7 @@ export const prepareClickableWords = ({ text, settings, action }) => {
     return isClickable ? (
       <>
         {specialCharPosition == 0 ? `${specialChars[0]} ` : ''}
-        <span key={`clickable-${word}-${index}`} style={{ color: '#f00', cursor: 'pointer' }} onClick={() => action({ word: word.replaceAll(regexCharsToRemove, '') })}>
+        <span key={`clickable-${word}-${index}`} className={terminologyClassName || style.terminology} onClick={() => action({ word: word.replaceAll(regexCharsToRemove, '') })}>
           {wordWithPostfix}
         </span>
         {specialCharPosition ? `${specialChars[0]} ` : ''}
@@ -39,6 +40,7 @@ export const prepareClickableWords = ({ text, settings, action }) => {
 const arrayToHtml = (arr) => {
   // Helper function to convert an inner array to an HTML string
   // If the list is number list just hide the marker ( as the text already includes the number )
+  // We don't want the users to override this style
   const innerArrayToHtml = (innerArr) => (<ul style={typeof(innerArr[0]?.props?.children[0]) === 'string' && innerArr[0]?.props.children[0].trim().match(/^( ?\d\.)/) ? { listStyle: 'none' } : {}}>
     {innerArr.map(item => (Array.isArray(item) ? innerArrayToHtml(item) : item ))}
   </ul>);
@@ -49,7 +51,7 @@ const arrayToHtml = (arr) => {
   return mainHtml;
 };
 
-export const prepareTextElements = ({ text, title, settings, action }) => {
+export const prepareTextElements = ({ text, title, settings, action, terminologyClassName }) => {
   const elements = [];
   const currentDepths = [];
   const depthIndexMap = {};
@@ -59,7 +61,7 @@ export const prepareTextElements = ({ text, title, settings, action }) => {
     const t = text[i];
     const depth = (t.match(/in:/g) || []).length;
 
-    const nestedItem = <li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), settings, action })}</li>;
+    const nestedItem = <li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), settings, action, terminologyClassName })}</li>;
 
     if ( depth < prevDepth ) {
       currentDepths.splice(currentDepths.indexOf(prevDepth), 1);
@@ -88,10 +90,10 @@ export const prepareTextElements = ({ text, title, settings, action }) => {
   return (arrayToHtml(elements));
 };
 
-const Content = ({ heading, text, action, showInnerTitle, settings }) => (
+const Content = ({ heading, text, action, showInnerTitle, settings, terminologyClassName }) => (
   <div>
     { showInnerTitle && <h3>{heading}</h3>}
-    { text && prepareTextElements({ text, title: heading, settings, action: ({ word }) => {
+    { text && prepareTextElements({ text, title: heading, settings, terminologyClassName, action: ({ word }) => {
       if ( action ) {
         action({ word });
       }
@@ -105,10 +107,10 @@ const Content = ({ heading, text, action, showInnerTitle, settings }) => (
 
 export const Title = ({ text }) => <h2>{text}</h2>;
 
-export const Guidance = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Guidance" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;
+export const Guidance = ({ ...props }) => <Content heading="Guidance" {...props} />;
 
-export const Clarification = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Clarification" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;
+export const Clarification = ({ ...props }) => <Content heading="Clarification" {...props} />;
 
-export const Ramadan = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Ramadan" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;
+export const Ramadan = ({ ...props }) => <Content heading="Ramadan" {...props} />;
 
-export const Marriage = ({ text, action, showIcons, showInnerTitle, settings }) => <Content action={action} heading="Marriage" text={text} showIcons={showIcons} showInnerTitle={showInnerTitle} settings={settings} />;
+export const Marriage = ({ ...props }) => <Content heading="Marriage" {...props} />;

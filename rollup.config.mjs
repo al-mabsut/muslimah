@@ -22,7 +22,8 @@ export default {
       entries: [
         { find: '@hanafi', replacement: path.resolve(__dirname, 'contents/hanafi/') },
         { find: '@components', replacement: path.resolve(__dirname, 'src/components/') },
-        { find: '@utils', replacement: path.resolve(__dirname, 'src/utils/') }
+        { find: '@utils', replacement: path.resolve(__dirname, 'src/utils/') },
+        { find: '@src', replacement: path.resolve(__dirname, 'src/') },
       ]
     }),
     markdownContentPlugin(),

@@ -6,16 +6,17 @@ import PropTypes from 'prop-types';
 import terminologies from '@components/Content/terminologies.json';
 import { Fragment } from 'preact';
 import { LEVELS } from '@utils/constants';
+import style from './style.module.css';
 
 const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, popUpModalWord }) => {
   if ( !displayPopUpModal ) {
     return <></>;
   }
 
-  return (<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', padding: '1%', backgroundColor: '#ddd' }} className={popUpClassName}>
+  return (<div className={popUpClassName || style.popUpModal}>
     <h3>{popUpModalWord} {`(${terminologies[popUpModalWord.toLowerCase()].clarification.en})`}</h3>
     <p>Description/Explanation coming soon inshallah</p>
-    <button style={{ position: 'absolute', top: '1%', right: '1%' }} onClick={() => setDisplayPopUpModal(false)}>X</button>
+    <button className={style.closeModalButton} onClick={() => setDisplayPopUpModal(false)}>X</button>
   </div>);
 };
 
@@ -28,8 +29,8 @@ const Levels = ({ level, setLevel }) => (<div>
   ))}
 </div>);
 
-const SettingsModal = ({ settings, setSettings, hideModal, settingsModalClassName }) => (<div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', padding: '1%', backgroundColor: '#ddd' }} className={settingsModalClassName || ''}>
-  <button style={{ position: 'absolute', top: '1%', right: '1%', zIndex: 1 }} onClick={hideModal}>X</button>
+const SettingsModal = ({ settings, setSettings, hideModal, settingsModalClassName }) => (<div className={settingsModalClassName || style.popUpModal}>
+  <button className={style.closeModalButton} onClick={hideModal}>X</button>
   <h3>Settings</h3>
   <h4>Levels:</h4>
   <Levels level={settings.level} setLevel={(newLevel) => setSettings((old) => {
@@ -43,8 +44,8 @@ const Settings = ({ settings, setSettings, settingsClassName, settingsModalClass
   const [displaySettingsModal, setDisplaySettingsModal] = useState();
 
   return (
-    <div className={settingsClassName || ''}>
-      <button style={{ position: 'absolute', top: '20px', right: '20px' }} onClick={() => setDisplaySettingsModal((old) => !old)}>
+    <div className={settingsClassName || style.settings}>
+      <button className={style.settingsButton} onClick={() => setDisplaySettingsModal((old) => !old)}>
         { typeof(settingsIcon) === 'string' ?
           <img width="25px" height="25px" src={settingsIcon} alt={`settings_icon`} /> :
           settingsIcon }
@@ -54,7 +55,7 @@ const Settings = ({ settings, setSettings, settingsClassName, settingsModalClass
   );
 };
 
-const Hidayah = ({ content, action, style, className, tabsContainerClassName, tabClassName, contentClassName,
+const Hidayah = ({ content, action, style, className, tabsContainerClassName, tabClassName, contentClassName, terminologyClassName,
   popUpClassName, settingsClassName, settingsModalClassName, showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true,
   guidanceIcon, clarificationIcon, ramadanIcon, marriageIcon, settingsIcon } = {}) => {
   const [activeTab, setActiveTab] = useState('Guidance');
@@ -106,10 +107,10 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
       {/* eslint-disable-next-line max-len */}
       <PopUpModal popUpClassName={popUpClassName} displayPopUpModal={displayPopUpModal} popUpModalWord={popUpModalWord} setDisplayPopUpModal={setDisplayPopUpModal} />
       <div className={contentClassName || ''}>
-        {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} settings={settings} />}
-        {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} settings={settings} />}
-        {activeTab === 'Ramadan' && <Ramadan action={action ? action : alternativeAction} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} settings={settings} />}
-        {activeTab === 'Marriage' && <Marriage action={action ? action : alternativeAction} text={content.maritalClarifications} showInnerTitle={showInnerTitle} settings={settings} />}
+        {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
+        {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
+        {activeTab === 'Ramadan' && <Ramadan action={action ? action : alternativeAction} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
+        {activeTab === 'Marriage' && <Marriage action={action ? action : alternativeAction} text={content.maritalClarifications} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
       </div>
     </div>
   );
@@ -125,6 +126,7 @@ Hidayah.propTypes = {
   popUpClassName: PropTypes.string,
   settingsClassName: PropTypes.string,
   settingsModalClassName: PropTypes.string,
+  terminologyClassName: PropTypes.string,
   showTitle: PropTypes.bool,
   showTabsTitle: PropTypes.bool,
   showTabsIcons: PropTypes.bool,
