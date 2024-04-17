@@ -4,3 +4,7 @@ export const LEVELS = [
   'advanced',
   'expert'
 ];
+
+export const DEFAULT_SETTINGS = {
+  level: LEVELS[0]
+};

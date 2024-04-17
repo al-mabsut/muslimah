@@ -1,11 +1,12 @@
 /* eslint-disable max-len */
 /* eslint-disable react/jsx-no-bind */
 import { Title, Clarification, Guidance, Marriage, Ramadan } from '@components/Content';
-import { useMemo, useState } from 'preact/hooks';
+import { useMemo, useState, useEffect } from 'preact/hooks';
 import PropTypes from 'prop-types';
 import terminologies from '@components/Content/terminologies.json';
 import { Fragment } from 'preact';
-import { LEVELS } from '@utils/constants';
+import { LEVELS, DEFAULT_SETTINGS } from '@utils/constants';
+import useLocalStorage from '@hooks/useLocalStorage';
 import style from './style.module.css';
 
 const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, popUpModalWord }) => {
@@ -29,18 +30,18 @@ const Levels = ({ level, setLevel }) => (<div>
   ))}
 </div>);
 
-const SettingsModal = ({ settings, setSettings, hideModal, settingsModalClassName }) => (<div className={settingsModalClassName || style.popUpModal}>
+const SettingsModal = ({ settings, setSettings, userId, hideModal, settingsModalClassName }) => (<div className={settingsModalClassName || style.popUpModal}>
   <button className={style.closeModalButton} onClick={hideModal}>X</button>
   <h3>Settings</h3>
   <h4>Levels:</h4>
-  <Levels level={settings.level} setLevel={(newLevel) => setSettings((old) => {
-    old.level = newLevel;
+  <Levels level={settings[userId].level} setLevel={(newLevel) => setSettings((old) => {
+    old[userId].level = newLevel;
     return { ...old };
   })}
   />
 </div>);
 
-const Settings = ({ settings, setSettings, settingsClassName, settingsModalClassName, settingsIcon }) => {
+const Settings = ({ settings, setSettings, userId, settingsClassName, settingsModalClassName, settingsIcon }) => {
   const [displaySettingsModal, setDisplaySettingsModal] = useState();
 
   return (
@@ -50,21 +51,31 @@ const Settings = ({ settings, setSettings, settingsClassName, settingsModalClass
           <img width="25px" height="25px" src={settingsIcon} alt={`settings_icon`} /> :
           settingsIcon }
       </button>
-      { displaySettingsModal && <SettingsModal settings={settings} setSettings={setSettings} hideModal={() => setDisplaySettingsModal(false)} settingsModalClassName={settingsModalClassName} /> }
+      { displaySettingsModal && <SettingsModal settings={settings} setSettings={setSettings} userId={userId} hideModal={() => setDisplaySettingsModal(false)} settingsModalClassName={settingsModalClassName} /> }
     </div>
   );
 };
 
-const Hidayah = ({ content, action, style, className, tabsContainerClassName, tabClassName, contentClassName, terminologyClassName,
+const Hidayah = ({ content, userId, action, style, className, tabsContainerClassName, tabClassName, contentClassName, terminologyClassName,
   popUpClassName, settingsClassName, settingsModalClassName, showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true,
   guidanceIcon, clarificationIcon, ramadanIcon, marriageIcon, settingsIcon } = {}) => {
   const [activeTab, setActiveTab] = useState('Guidance');
   const [displayPopUpModal, setDisplayPopUpModal] = useState();
   const [popUpModalWord, setPopUpModalTerm] = useState();
-  const [settings, setSettings] = useState({
-    level: 'newcomer'
+  const [settings, setSettings] = useLocalStorage('muslimah_settings', {
+    [userId]: { ...DEFAULT_SETTINGS }
   });
   const tabs = useMemo(() => (['Guidance', 'Clarification', 'Ramadan', 'Marriage']), []);
+
+  useEffect(() => {
+    // Keep tracking the new userIds
+    if ( !settings[userId] ) {
+      setSettings((old) => {
+        old[userId] = { ...DEFAULT_SETTINGS };
+        return { ...old };
+      });
+    }
+  }, [userId]);
 
   const getIcon = ({ tab }) => {
     switch (tab) {
@@ -90,7 +101,7 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
 
   return (
     <div className={className || ''} style={{ ...style }}>
-      <Settings settings={settings} setSettings={setSettings} settingsClassName={settingsClassName} settingsModalClassName={settingsModalClassName} settingsIcon={settingsIcon} />
+      <Settings settings={settings} setSettings={setSettings} userId={userId} settingsClassName={settingsClassName} settingsModalClassName={settingsModalClassName} settingsIcon={settingsIcon} />
       { showTitle && <Title text={content.title} />}
       <div className={tabsContainerClassName || ''}>
         {tabs && tabs.map((tab) => (
@@ -107,10 +118,10 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
       {/* eslint-disable-next-line max-len */}
       <PopUpModal popUpClassName={popUpClassName} displayPopUpModal={displayPopUpModal} popUpModalWord={popUpModalWord} setDisplayPopUpModal={setDisplayPopUpModal} />
       <div className={contentClassName || ''}>
-        {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
-        {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
-        {activeTab === 'Ramadan' && <Ramadan action={action ? action : alternativeAction} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
-        {activeTab === 'Marriage' && <Marriage action={action ? action : alternativeAction} text={content.maritalClarifications} showInnerTitle={showInnerTitle} settings={settings} terminologyClassName={terminologyClassName} />}
+        {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} settings={settings[userId] || DEFAULT_SETTINGS} terminologyClassName={terminologyClassName} />}
+        {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} settings={settings[userId] || DEFAULT_SETTINGS} terminologyClassName={terminologyClassName} />}
+        {activeTab === 'Ramadan' && <Ramadan action={action ? action : alternativeAction} text={content.ramadanClarifications} showInnerTitle={showInnerTitle} settings={settings[userId] || DEFAULT_SETTINGS} terminologyClassName={terminologyClassName} />}
+        {activeTab === 'Marriage' && <Marriage action={action ? action : alternativeAction} text={content.maritalClarifications} showInnerTitle={showInnerTitle} settings={settings[userId] || DEFAULT_SETTINGS} terminologyClassName={terminologyClassName} />}
       </div>
     </div>
   );
@@ -118,6 +129,7 @@ const Hidayah = ({ content, action, style, className, tabsContainerClassName, ta
 
 Hidayah.propTypes = {
   content: PropTypes.object.isRequired,
+  userId: PropTypes.string,
   action: PropTypes.func,
   style: PropTypes.object,
   className: PropTypes.string,
