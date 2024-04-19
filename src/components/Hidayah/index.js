@@ -5,7 +5,7 @@ import { useMemo, useState, useEffect } from 'preact/hooks';
 import PropTypes from 'prop-types';
 import terminologies from '@components/Content/terminologies.json';
 import { Fragment } from 'preact';
-import { LEVELS, DEFAULT_SETTINGS } from '@utils/constants';
+import { LEVELS, ORDERS, DEFAULT_SETTINGS } from '@utils/constants';
 import useLocalStorage from '@hooks/useLocalStorage';
 import style from './style.module.css';
 
@@ -30,12 +30,27 @@ const Levels = ({ level, setLevel }) => (<div>
   ))}
 </div>);
 
+const Ordering = ({ order, setOrder }) => (<div>
+  { ORDERS && ORDERS.map((ordr) => (
+    <>
+      <input type="radio" id={ordr} name={ordr} value={ordr} checked={ordr === order} onChange={() => setOrder(ordr)} />
+      <label key={ordr} for={ordr}>{ordr}</label>
+    </>
+  ))}
+</div>);
+
 const SettingsModal = ({ settings, setSettings, userId, hideModal, settingsModalClassName }) => (<div className={settingsModalClassName || style.popUpModal}>
   <button className={style.closeModalButton} onClick={hideModal}>X</button>
   <h3>Settings</h3>
   <h4>Levels:</h4>
   <Levels level={settings[userId].level} setLevel={(newLevel) => setSettings((old) => {
     old[userId].level = newLevel;
+    return { ...old };
+  })}
+  />
+  <h4>Ordering:</h4>
+  <Ordering order={settings[userId].order} setOrder={(newOrder) => setSettings((old) => {
+    old[userId].order = newOrder;
     return { ...old };
   })}
   />
