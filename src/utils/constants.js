@@ -5,6 +5,13 @@ export const LEVELS = [
   'expert'
 ];
 
+export const ORDERS = [
+  'Salah (prayer)',
+  'prayer (Salah)',
+  'prayer'
+];
+
 export const DEFAULT_SETTINGS = {
-  level: LEVELS[0]
+  level: LEVELS[0],
+  order: ORDERS[0]
 };

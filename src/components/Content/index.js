@@ -1,8 +1,11 @@
+/* eslint-disable max-len */
 /* eslint-disable react/jsx-no-bind */
 import terminologies from './terminologies.json';
 import { Fragment } from 'preact';
-import { LEVELS } from '@utils/constants';
+import { LEVELS, ORDERS } from '@utils/constants';
 import style from './style.module.css';
+
+const regexCharsToRemove = /[:.,()]/g;
 
 const shouldDisplayExplanation = ({ userLevel, wordLevel }) => {
   const userLevelIndex = LEVELS.indexOf(userLevel);
@@ -10,15 +13,30 @@ const shouldDisplayExplanation = ({ userLevel, wordLevel }) => {
   return userLevelIndex < wordLevelIndex;
 };
 
+const handleTerminologyWord = ({ word, settings, isClickable: explanation }) => {
+  const selectedOrderIndex = ORDERS.indexOf(settings.order);
+  const wordLevel = terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')].level;
+  const userLevel = settings.level;
+  switch (selectedOrderIndex) {
+  case 0:
+    return `${word.replaceAll(regexCharsToRemove, '')} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${explanation})` : ''} `;
+  case 1:
+    return `${explanation} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${word.replaceAll(regexCharsToRemove, '')})` : ''} `;
+  case 2:
+    return `${explanation} `;
+  default:
+    console.error('Invalid selected order!', settings.order);
+  }
+};
+
 export const prepareClickableWords = ({ text, settings, action, terminologyClassName }) => {
   const words = text.split(' ');
-  const regexCharsToRemove = /[:.,()]/g;
 
   return words.map((word, index) => {
     const isClickable = terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')]?.clarification?.en || false;
     const specialChars = isClickable ? word.match(regexCharsToRemove) : null;
     const specialCharPosition = (specialChars && specialChars[0]) ? word.indexOf(specialChars[0]) : null;
-    const wordWithPostfix = isClickable ? `${word.replaceAll(regexCharsToRemove, '')} ${ shouldDisplayExplanation({ userLevel: settings.level, wordLevel: terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')].level }) ? `(${isClickable})` : ''} ` : word;
+    const wordWithPostfix = isClickable ? handleTerminologyWord({ word, settings, isClickable }) : word;
 
     if ( word.includes('http') ) {
       // eslint-disable-next-line react/jsx-no-target-blank
