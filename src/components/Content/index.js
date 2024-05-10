@@ -15,13 +15,13 @@ const shouldDisplayExplanation = ({ userLevel, wordLevel }) => {
 
 const handleTerminologyWord = ({ word, settings, isClickable: explanation }) => {
   const selectedOrderIndex = ORDERS.indexOf(settings.order);
-  const wordLevel = terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')].level;
+  const wordLevel = terminologies[word.toLowerCase().replace(regexCharsToRemove, '')].level;
   const userLevel = settings.level;
   switch (selectedOrderIndex) {
   case 0:
-    return `${word.replaceAll(regexCharsToRemove, '')} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${explanation})` : ''} `;
+    return `${word.replace(regexCharsToRemove, '')} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${explanation})` : ''} `;
   case 1:
-    return `${explanation} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${word.replaceAll(regexCharsToRemove, '')})` : ''} `;
+    return `${explanation} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${word.replace(regexCharsToRemove, '')})` : ''} `;
   case 2:
     return `${explanation} `;
   default:
@@ -33,7 +33,7 @@ export const prepareClickableWords = ({ text, settings, action, terminologyClass
   const words = text.split(' ');
 
   return words.map((word, index) => {
-    const isClickable = terminologies[word.toLowerCase().replaceAll(regexCharsToRemove, '')]?.clarification?.en || false;
+    const isClickable = terminologies[word.toLowerCase().replace(regexCharsToRemove, '')]?.clarification?.en || false;
     const specialChars = isClickable ? word.match(regexCharsToRemove) : null;
     const specialCharPosition = (specialChars && specialChars[0]) ? word.indexOf(specialChars[0]) : null;
     const wordWithPostfix = isClickable ? handleTerminologyWord({ word, settings, isClickable }) : word;
@@ -46,7 +46,7 @@ export const prepareClickableWords = ({ text, settings, action, terminologyClass
     return isClickable ? (
       <>
         {specialCharPosition == 0 ? `${specialChars[0]} ` : ''}
-        <span key={`clickable-${word}-${index}`} className={terminologyClassName || style.terminology} onClick={() => action({ word: word.replaceAll(regexCharsToRemove, '') })}>
+        <span key={`clickable-${word}-${index}`} className={terminologyClassName || style.terminology} onClick={() => action({ word: word.replace(regexCharsToRemove, '') })}>
           {wordWithPostfix}
         </span>
         {specialCharPosition ? `${specialChars[0]} ` : ''}
@@ -79,7 +79,7 @@ export const prepareTextElements = ({ text, title, settings, action, terminology
     const t = text[i];
     const depth = (t.match(/in:/g) || []).length;
 
-    const nestedItem = <li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replaceAll('in:', ''), settings, action, terminologyClassName })}</li>;
+    const nestedItem = <li key={`prepare_text_${title}_nested_${i}`}>{prepareClickableWords({ text: t.replace(/in:/g, ''), settings, action, terminologyClassName })}</li>;
 
     if ( depth < prevDepth ) {
       currentDepths.splice(currentDepths.indexOf(prevDepth), 1);
