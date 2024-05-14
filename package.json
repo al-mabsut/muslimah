@@ -51,7 +51,7 @@
     "@storybook/addon-links": "^8.0.0",
     "@storybook/blocks": "^8.0.0",
     "@storybook/preact": "^8.0.0",
-    "@storybook/preact-vite": "^7.6.17",
+    "@storybook/preact-vite": "^8.1.0",
     "@storybook/test": "^8.0.0",
     "@testing-library/preact": "^3.2.3",
     "babel-jest": "^29.7.0",
