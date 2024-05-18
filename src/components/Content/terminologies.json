@@ -29,6 +29,18 @@
     },
     "level": "advanced"
   },
+  "fidyah": {
+    "clarification": {
+      "en": "monetary redemption for missed worship"
+    },
+    "level": "expert"
+  },
+  "fiqh": {
+    "clarification": {
+      "en": "religious jurisprudence"
+    },
+    "level": "advanced"
+  },
   "ghusl": {
     "clarification": {
       "en": "full ablution"
@@ -89,6 +101,18 @@
     },
     "level": "advanced"
   },
+  "mutahayyirah": {
+    "clarification": {
+      "en": "someone experiencing continuous bleeding, while not knowing her habit"
+    },
+    "level": "advanced"
+  },
+  "nafl": {
+    "clarification": {
+      "en": "optional"
+    },
+    "level": "advanced"
+  },
   "nifaas": {
     "clarification": {
       "en": "postnatal bleeding"
@@ -131,7 +155,7 @@
     },
     "level": "basic"
   },
-  "takbeer-e-tahreema": {
+  "takbeer-e-tahreemah": {
     "clarification": {
       "en": "the opening phrase of the prayer"
     },

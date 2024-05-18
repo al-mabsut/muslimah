@@ -2,23 +2,38 @@
 
 ## Guidance
 
-- Based on the latest information provided by you, your Ongoing Hayd concluded before your latest Hayd habit.
-- Accordingly, on it's conclusion you were to perform a Ghusl to attain purity from the state of Hayd and resume your seasonal/daily worship as applies (Prayer and Ramadan etc.)
-- If the conclusion of Hayd was just before a Salaah time while there was sufficient time for Ghusl and Takbeer-e-Tahreema remaining, perform Qadaa for the missed Salaah. If not, Qadaa is not required.
+- Your Ongoing Hayd has ended earlier than your previous cycle.
+  - Note the exact duration of your previous Hayd (for instance, 7 days and 3 hours).
+  - Note that your current Hayd is shorter (for instance, 4 days and 3 hours).
+  - Calculate the difference between the two durations (e.g., 3 days). This is your "Cautionary Period"
+- For the beginning and ending of this period, be mindful of two types of Ghusl, respectively:
+  - Wajib Ghusl: Perform Ghusl when bleeding stops before any worship.
+    - If there's enough time to complete Ghusl and Salaah, do not miss the Salaah; if missed, then it is subject to Qadaa.
+    - If there's no time for Ghusl before Salaah time ends, you are exempt from praying that Salaah.
+    - If there's time for Ghusl but not for Takbeer-e-Tahreemah, you are exempt from praying that Salaah.
+    - If there's just enough time for Ghusl and Takbeer-e-Tahreemah, then 'Isha must be performed; if missed, then it is subject to Qadaa.
+  - Mustahabb Ghusl: Perform a precautionary Ghusl at the end of the "Cautionary Period"
 
 ## Additional Clarifications
 
-- Since your Hayd ended earlier than usual; there is always a chance that your Hayd could still return. A precautionary Ghusl at your Hayd habit time is advisable due to the possibility of bleeding resuming within 15 days (from the conclusion of Hayd).
-- Such resuming of bleeding may end up compromising your Salaah until you have repeated your Ghusl again. The precautionary Ghusl is therefore adviced to avoid this from happening.
+- Tuhr is confirmed when:
+  - 15 days (360 hours) pass without bleeding that qualifies as Hayd.
+- So far, your cycle hasn't met these criteria yet.
+- "Cautionary Period" as referred to under "Guidance" is termed as cautionary to bring to your attention that depending on how the future unfolds, some/all the days within this period can still become Hayd.
+- Ghusl is Wajib whenever your Ongoing Hayd ends to maintain purity for worship.
+- If bleeding resumes within 15 days, it invalidates your Ghusl, requiring it to be redone. Otherwise, your worship will not be valid.
+- A precautionary follow-up Ghusl helps maintain purity if bleeding resumes after the "Cautionary Period"
+- Ensure to consult a scholar about the precautionary Ghusl if this is a source of confusion to you.
 
 ## Ramadan Clarifications
 
-- If your Hayd ended during the day, then you are required to behave like a fasting person for the remainder of the day by abstaining from food, drinks and conjugal relationships.
-- If your Hayd ended during the night, such that there was enough time before Fajr for you to complete a Ghusl and Takbeer-e-Tahreema, then accordingly you will be required to fast that day. If no such time sufficient was remaining, then you will be considered as someone whose Hayd ended during the day and accordingly you will be required to behave like a fasting person and later on make Qadaa of that day.
+- If Ongoing Hayd ends during the day, behave like a fasting person (abstain from food, drinks, and conjugal relationships).
+- If Ongoing Hayd ends at night, as long as there is enough time for Ghusl and Takbeer-e-Tahreemah before Fajr, then fasting that day is Fard and must be performed; if missed, then it is subject to Qadaa.
+  - If no such time sufficient was remaining, then you will be considered as someone whose Hayd ended during the day and accordingly you will be required to behave like a fasting person for the remainder of the day. That day will be subject to Qadaa.
 
 ## Marital Clarifications
 
-- Conjugal relationships are not yet allowed, until the Hayd habit has been reached
+- During the "Cautionary Period", conjugal relationships will remain impermissible despite the bleeding having fully stopped.
 - Until such time, specific physical boundaries are set for the husband:
   - Direct contact with or viewing the wife's skin between the navel and knee is strictly prohibited.
   - Engaging in any sexual activity that stimulates the wife's vagina is forbidden, including conjugal relations and other forms of stimulation, such as masturbation.
@@ -28,6 +43,4 @@
   - Engage in physical contact like fondling breasts.
   - Have non-penetrative physical contact with any of his body parts while ensuring no vaginal stimulation occurs.
 - Husband and wife will continue to interact with each other in day-to-day matters such as eating together, sleeping in the same bed etc.
-- Conjugal relationships will remain impermissible even if the bleeding has fully stopped. (because this is still the time before the Hayd habit.)
 - Divorce during this time is impermissible, but if issued, it will be valid and carry its full implications.
-- Once the Hayd habit has been reached and the bleeding has not returned, then conjugal relationships are allowed again.

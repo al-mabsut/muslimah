@@ -2,24 +2,23 @@
 
 ## Guidance
 
-- Your Hayd lasted till your latest Hayd habit:
-  - In the case you took a precautionary Ghusl at the conclusion of your Hayd habit, as advised previously, then none of the worhsip you performed since then has been compromised.
-  - If not, then each Salaah since your Hayd habit will be invalidated until a time where you did Ghusl
-- Any Qadaa Salaah performed until your Hayd habit will be invalid and will need to be repeated.
-- Any Salaah that was not performed between Hayd habit day and the 10th day of your Ongoing Bleeding will need to be made Qadaa of
+- Based on the latest inputs you provided, your Ongoing Hayd exceeded 10 days, on account of which we needed to apply your Habit.
+- Accordingly, Hayd and Tuhr have been retroactively applied and you need to account for the fact that:
+  - Any worship performed during the days now marked as Hayd is invalidated
+  - Any Wajib Ghusl performed during the days now marked as Hayd is invalidated
+  - Any day that has changed from Ongoing Hayd to Tuhr is subject to Qadaa for Salaah
+- If you were previously advised about doing a precautionary Ghusl but you did not do that, then all worship done from the point that Hayd has officially ended until the next time you did Ghusl is invalidated and will need to be repeated.
 
 ## Additional Clarifications
 
 - Matters have consolidated as your Ongoing Bleeding exceeded 10 days
-- The meaning of Hayd habit is the latest valid duration of Hayd as recorded, that we revert to in this case.
 - Accordingly, your habit was applied and the previous guidance you received has changed accordingly.
-- Kindly consult a scholar about the precautionary Ghusl if this is a source of confusion to you.
+- If you would like to keep track of your habit for future reference, then look at the number of days of Hayd that were marked off for your current cycle as well as the number of days of Tuhr preceding your last Hayd.
+- Ensure to consult a scholar about the precautionary Ghusl if this is a source of confusion to you.
 
 ## Ramadan Clarifications
 
-- On account of reverting back to your latest habit:
-  - Any Qadaa fasting performed until your Hayd habit will be invalid and will need to be repeated.
-  - Any fasting that was not performed between Hayd habit day and the 10th day of your Ongoing Bleeding will need to be made Qadaa of
+- Take note of all the days subject to Qadaa as detailed under "Guidance"
 
 ## Marital Clarifications
 

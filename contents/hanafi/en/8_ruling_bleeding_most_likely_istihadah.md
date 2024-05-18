@@ -2,24 +2,26 @@
 
 ## Guidance
 
-- Bleeding in this period is likely not Hayd and should be treated under the ruling of Istihadah, as such:
-  - You are to disregard any bleeding (regardless of its volume/color) and continue your regular worship practices:
+- Bleeding in this period is likely not Hayd and should be treated according to the ruling of Istihadah, as such:
+  - Ignore all bleeding (regardless of its volume/color) and continue your regular worship practices:
     - Five daily Salaah.
     - Fasting during Ramadan.
-    - Reciting Quran.
-    - Performing Tawaaf in Hajj / Umrah.
-- Renew Wudu whenever bleeding/spotting occurs. If this happens during Salaah, the prayer breaks and must be restarted.
-- If bleeding frequency prevents completion of Salaah, follow the guidelines for Ma’dhur as detailed in this link: https://mensesmatters.org/rulings-for-the-excused-madhur
+    - Tilawah of Quran.
+- Renew Wudu whenever bleeding/spotting occurs. If this happens during Salaah, then Salaah breaks and must be restarted.
+- If bleeding frequency prevents completion of Salaah, follow the guidelines for Ma’dhur as detailed in this link: <https://mensesmatters.org/rulings-for-the-excused-madhur>
 
 ## Additional Clarifications
 
-- Though currently classified as Istihadah, future developments might reclassify it as Hayd, affecting worship practices. When this happens, then for all the days marked as Hayd:
-  - Repeat any Qadaa Salaah performed.
+- Based on all the evidence available, this bleeding is currently classified as Istihadah:
+  - Treat it like a nosebleed. It breaks Wudu but doesn’t exempt you from Fard / Wajib worship.
+  - Any Nafl and Sunnah Salaah / Fasting performed, when it was nullified after commencing it in a state of Tuhr is subject to Qadaa.
+- Bleeding Most Likely Istihadah can eventually evolve into Hayd, and thus exempt and invalidate the worship performed accordingly. If that happens, then keep in mind:
+  - If any Qadaa Salaah was performed during these days, then they are to be repeated.
   - Fard Salaah, though nullified, need not be repeated.
-  - Any fasting performed will be nullified. As such you are to repeat Ramadan fasts and any Qadaa fasts.
-  - Any optional and Sunnah Salaah / Fasting performed, when it was nullified after commencing it in a state of Tuhr is to be made Qadaa of. If they were commenced not in a state of Tuhr then any such optional / Sunnah worship does not require Qadaa.
-- There is no Qadaa for Tilawah of Quran.
+  - Any fasting performed will be nullified. As such you are to repeat Ramadan fasts and Qadaa fasts.
+  - Any Nafl and Sunnah Salaah / Fasting performed, when it was nullified after commencing it in a state of Hayd is NOT subject to Qadaa. If they were commenced in a state of Tuhr and then Hayd nullified them, then they are subject to Qadaa
+- Tilawah of Quran is not subject to Qadaa
 
 ## Marital Clarifications
 
-- One ought to abstain from conjugal relationships during this time. For more information, kindly follow this link: https://mensesmatters.org/intercourse-during-early-blood/
+- One ought to abstain from conjugal relationships during this time. For more information, kindly follow this link: <https://mensesmatters.org/intercourse-during-early-blood/>

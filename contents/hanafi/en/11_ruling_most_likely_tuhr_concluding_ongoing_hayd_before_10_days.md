@@ -2,16 +2,17 @@
 
 ## Guidance
 
-- Based on the latest information provided by you, your Ongoing Hayd concluded after your latest Hayd habit and did not exceed 10 days.
-- Accordingly, on it's conclusion you were to perform a Ghusl to attain purity from the state of Hayd and resume your seasonal/daily worship as applies (Prayer and Ramadan etc.)
-- If the conclusion of Hayd was just before a Salaah time while there was sufficient time for Ghusl and Takbeer-e-Tahreema remaining, perform Qadaa for the missed Salaah. If not, Qadaa is not required.
-- Until a Tuhr of 15 days since the conclusion of your Hayd has not occurred, the ruling could slightly change, ensure to keep track of this.
+- Based on the latest information provided by you, your Ongoing Hayd ended after your latest Hayd habit and did not exceed 10 days.
+- Perform Ghusl to attain purity and resume your regular worship (prayer, fasting, etc.).
+- If Hayd ended just before a prayer time with enough time for Ghusl and Takbeer-e-Tahreemah, then such a Salaah is Fard. If missed, then it is subject to Qadaa; otherwise not.
+- Keep track of your Tuhr until 15 days pass since the end of your Hayd, as the ruling can change.
 
 ## Ramadan Clarifications
 
-- If your Hayd ended during the day, then you are required to behave like a fasting person for the remainder of the day by abstaining from food, drinks and conjugal relationships.
-- If your Hayd ended during the night, such that there was enough time before Fajr for you to complete a Ghusl and Takbeer-e-Tahreema, then accordingly you will be required to fast that day. If no such time sufficient was remaining, then you will be considered as someone whose Hayd ended during the day and accordingly you will be required to behave like a fasting person and later on make Qadaa of that day.
+- If Hayd ended during the day, act like a fasting person for the rest of the day (abstain from food, drinks, and conjugal relationships).
+- If Hayd ended before Fajr with enough time for Ghusl and Takbeer-e-Tahreemah, then fasting for that day is required. If missed, then it is subject to Qadaa.
+  - If no such time sufficient was remaining, then you will be considered as someone whose Hayd ended during the day and accordingly you will be required to behave like a fasting person for the remainder of the day. That day will be subject to Qadaa.
 
 ## Marital Clarifications
 
-- As long bleeding has not returned at any point in time, then conjugal relationships are allowed again.
+- Conjugal relationships are allowed as long as bleeding has not resumed.

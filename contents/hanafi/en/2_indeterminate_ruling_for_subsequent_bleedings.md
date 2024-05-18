@@ -2,12 +2,22 @@
 
 ## Guidance
 
-- Continue to consistently record your discharges:
-  - It is Wajib to log your discharges (especially in your current situation).
-  - Accurate tracking is crucial for scholars to provide effective assistance.
+- Keep recording your discharges:
+  - It's Wajib to do so. (especially in your situation)
+  - Accurate records are crucial for scholars to help you.
 
 ## Additional Clarifications
 
-- Based on your reported discharges, you are currently classified as experiencing continuous bleeding.
-- To determine the specific ruling applicable to your situation, additional information is needed.
-- Should further details of past discharges still leave uncertainties, it is required for you to consult with scholars for expert advice tailored to your case.
+- Based on your recorded discharges, you are currently classified as Mutahayyirah.
+- More information is needed to give a specific ruling for this set of discharges.
+- You have two options available to remedy your situation:
+    1. Consult scholars for personalized advice (highly recommended for your case)
+    2. Share more detailed past cycle records, in the hope that it may include the needed information to disambiguate
+
+## Ramadan Clarifications
+
+- The rulings for your situation are highly complex and require scholarly guidance.
+
+## Marital Clarifications
+
+- The rulings for your situation are highly complex and require scholarly guidance.

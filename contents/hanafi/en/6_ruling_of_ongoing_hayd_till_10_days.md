@@ -2,20 +2,28 @@
 
 ## Guidance
 
-- When unsure if bleeding has fully ceased or will resume, it's Mustahabb to complete your Salaah at the latest permissible times:
-  - For Fajr and Dhuhr: Pray at the last possible moment.
-  - For ‘Asr, Maghrib, and ‘Isha: Pray before Makrooh time, defined as:
-    - ‘Asr: About 20 minutes before sunset when the sun turns pale yellow.
+- When bleeding stops and it's unclear if it will resume, it's Mustahabb to complete your Salaah at the latest permissible times:
+  - Fajr and Dhuhr: Pray at the last possible moment.
+  - ‘Asr, Maghrib, and ‘Isha: Pray before Makrooh time, defined as:
+    - ‘Asr: About 20 minutes before sunset (when the sun turns pale yellow).
     - Maghrib: When many stars are visible, but with Western horizon still red.
-    - ‘Isha: At the midpoint between Maghrib and Fajr.
-- Each time your bleeding stops, before engaging in any act of worship such as prayer, Quran, fasting etc. you are required to do Ghusl
+    - ‘Isha: At the midpoint between Maghrib and Fajr for men able to attend Salaah in congregation. For women, this does not apply so they will complete ‘Isha at the last possible moment.
+- Perform Ghusl before any act of worship (like Salaah, Quran, or fasting) each time bleeding stops.
+
+## Additional Clarifications
+
+- Note: "Ongoing Hayd" is a terminology introduced to express a Hayd actively in progress today.
+- This distinction helps us to be more specific in the rulings that apply to you on this given moment
 
 ## Ramadan Clarifications
 
-- If bleeding begins during daytime fasting, it's Wajib to break your fast discreetly and do Qadaa for it later.
-- Bleeding that starts and persists overnight until Fajr exempts you from fasting that day, but you must do Qadaa for it subsequently.
-- Should bleeding stop during the day, continue to observe fast-like behavior (abstaining from food, drink, and conjugal relations), though making up the fast later is still required.
-- If bleeding ceases at night, leaving enough time for Ghusl and Takbeer-e-Tahreema before Fajr, fast the oncoming day. If not, behave as fasting but do Qadaa for it later.
+- Missing a Ramadan fast on account of Hayd can take on the following scenarios:
+  - If the bleeding started during daytime fasting, then it is Wajib to break your fast discreetly
+  - If the bleeding started during nighttime and persists overnight until Fajr, then you are exempted from fasting that day
+    - However, if the bleeding stopped at night before Fajr time sets in, such that there was enough time for Ghusl and Takbeer-e-Tahreemah before Fajr to be done, then it is required to fast that day.
+  - If the bleeding stopped during daytime, then you must continue to observe fast-like behaviour (abstain from food, drink, and conjugal relations)
+- Any Ramadan fast that was missed, whether on account of a legitimate excuse (such as the above scenarios) or not is subject to Qadaa
+  - If Qadaa is not possible on account of valid excuses, then Fidyah must be given in lieu of each fast missed. Kindly reach out to scholars for specific guidance
 
 ## Marital Clarifications
 
@@ -28,5 +36,5 @@
   - Engage in physical contact like fondling breasts.
   - Have non-penetrative physical contact with any of his body parts while ensuring no vaginal stimulation occurs.
 - Husband and wife will continue to interact with each other in day-to-day matters such as eating together, sleeping in the same bed etc.
-- Whenever the bleeding has ended, then conjugal relationships are allowed provided the wife has taken Ghusl
+- Whenever the bleeding has ended and one does not expect it to resume anytime soon, then conjugal relationships are allowed provided the wife has taken Ghusl
 - Divorce during this time is impermissible, but if issued, it will be valid and carry its full implications.
