@@ -2,14 +2,22 @@
 
 ## Guidance
 
-- Persist in consistently recording your discharges:
-  - It is Wajib to log your discharges.
-  - Accurate tracking is crucial for scholars to provide effective assistance.
+- Keep recording your discharges:
+  - It's Wajib to do so.
+  - Accurate records help scholars assist you better.
 
 ## Additional Clarifications
 
-- This pertains to your initial entries of discharge data.
-- Currently, a definitive ruling is not possible due to the lack of a verified Tuhr period (a purity phase lasting at least 15 days) before these discharges.
-- To secure a more accurate ruling, you have two options:
-  1. Seek guidance from scholars for advice tailored to your individual case.
-  2. Provide more detailed records of your previous menstrual cycle(s) to enable more informed guidance.
+- This relates to your first set of discharge entries.
+- A definite ruling for them isn't possible yet as there's no confirmed Tuhr before these discharges.
+- For a precise ruling:
+  1. Consult a scholar for personalized advice. Or;
+  2. Share more detailed past cycle records for better guidance.
+
+## Ramadan Clarifications
+
+- More information is needed from you to provide guidance.
+
+## Marital Clarifications
+
+- More information is needed from you to provide guidance.
