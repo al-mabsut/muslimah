@@ -22,8 +22,6 @@ const handleTerminologyWord = ({ word, settings, isClickable: explanation }) => 
     return `${word.replace(regexCharsToRemove, '')} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${explanation})` : ''} `;
   case 1:
     return `${explanation} ${ shouldDisplayExplanation({ userLevel, wordLevel }) ? `(${word.replace(regexCharsToRemove, '')})` : ''} `;
-  case 2:
-    return `${explanation} `;
   default:
     console.error('Invalid selected order!', settings.order);
   }
