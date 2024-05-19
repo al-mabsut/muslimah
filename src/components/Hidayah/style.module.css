@@ -21,3 +21,12 @@
   top: 20px;
   right: 20px;
 }
+
+.closeModalButton img, .settingsButton img, .tab img {
+  width: 25px;
+  height: 25px;
+}
+
+.radioBoxItem{
+  display: inline;
+}
