@@ -11,7 +11,7 @@
     - If there's enough time to complete Ghusl and Salaah, do not miss the Salaah; if missed, then it is subject to Qadaa.
     - If there's no time for Ghusl before Salaah time ends, you are exempt from praying that Salaah.
     - If there's time for Ghusl but not for Takbeer-e-Tahreemah, you are exempt from praying that Salaah.
-    - If there's just enough time for Ghusl and Takbeer-e-Tahreemah, then 'Isha must be performed; if missed, then it is subject to Qadaa.
+    - If there's just enough time for Ghusl and Takbeer-e-Tahreemah, then ‘Isha must be performed; if missed, then it is subject to Qadaa.
   - Mustahabb Ghusl: Perform a precautionary Ghusl at the end of the "Cautionary Period"
 
 ## Additional Clarifications
