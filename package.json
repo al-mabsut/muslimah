@@ -58,7 +58,7 @@
     "babel-plugin-jsx-pragmatic": "^1.0.2",
     "eslint": "^8.56.0",
     "eslint-config-google": "^0.14.0",
-    "eslint-plugin-compat": "^5.0.0",
+    "eslint-plugin-compat": "^6.0.0",
     "eslint-plugin-preact": "^0.1.0",
     "eslint-plugin-storybook": "^0.8.0",
     "fs": "^0.0.1-security",
