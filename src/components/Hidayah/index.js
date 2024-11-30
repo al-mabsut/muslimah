@@ -12,7 +12,7 @@ import { LEVELS, ORDERS, DEFAULT_SETTINGS, LEVELS_CLARIFICATION, SETTINGS_EXAMPL
 import useLocalStorage from '@hooks/useLocalStorage';
 import mainStyle from './style.module.css';
 
-const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, popUpModalWord, closeButtonClassName, closeIcon }) => {
+const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, popUpModalWord, popUpCloseButtonClassName, popUpCloseIcon }) => {
   if ( !displayPopUpModal ) {
     return <></>;
   }
@@ -20,8 +20,10 @@ const PopUpModal = ({ popUpClassName, displayPopUpModal, setDisplayPopUpModal, p
   return (<div className={popUpClassName || mainStyle.popUpModal}>
     <h3>{popUpModalWord} {`(${terminologies[popUpModalWord.toLowerCase()].clarification.en})`}</h3>
     <p>Description/Explanation coming soon inshallah</p>
-    <button className={closeButtonClassName || mainStyle.closeModalButton} onClick={() => setDisplayPopUpModal(false)}>
-      <img src={closeIcon} alt="close" />
+    <button className={popUpCloseButtonClassName || mainStyle.closeModalButton} onClick={() => setDisplayPopUpModal(false)}>
+      { typeof(popUpCloseIcon) === 'string' ?
+        <img src={popUpCloseIcon} alt={`popup-close`} /> :
+        popUpCloseIcon }
     </button>
   </div>);
 };
@@ -67,9 +69,11 @@ const Example = ({ settings, terminologyClassName }) => (
   </div>
 );
 
-const SettingsModal = ({ settings, setSettings, userId, hideModal, settingsModalClassName, closeButtonClassName, closeIcon, RadioBoxComponent, radioBoxContainerClassName, terminologyClassName }) => (<div className={settingsModalClassName || mainStyle.popUpModal}>
-  <button className={closeButtonClassName || mainStyle.closeModalButton} onClick={hideModal}>
-    <img src={closeIcon} alt="close" />
+const SettingsModal = ({ settings, setSettings, userId, hideModal, settingsModalClassName, settingsCloseButtonClassName, settingsCloseIcon, RadioBoxComponent, radioBoxContainerClassName, terminologyClassName }) => (<div className={settingsModalClassName || mainStyle.popUpModal}>
+  <button className={settingsCloseButtonClassName || mainStyle.closeModalButton} onClick={hideModal}>
+    { typeof(settingsCloseIcon) === 'string' ?
+      <img src={settingsCloseIcon} alt={`settings-close`} /> :
+      settingsCloseIcon }
   </button>
   <h3>Settings</h3>
   <h4>Levels:</h4>
@@ -88,7 +92,7 @@ const SettingsModal = ({ settings, setSettings, userId, hideModal, settingsModal
   <Example settings={settings[userId]} terminologyClassName={terminologyClassName} />
 </div>);
 
-const Settings = ({ settings, setSettings, userId, settingsClassName, settingsModalClassName, settingsOpenButtonClassName, closeButtonClassName, settingsIcon, closeIcon, RadioBoxComponent, radioBoxContainerClassName, terminologyClassName }) => {
+const Settings = ({ settings, setSettings, userId, settingsClassName, settingsModalClassName, settingsOpenButtonClassName, settingsCloseButtonClassName, settingsIcon, settingsCloseIcon, RadioBoxComponent, radioBoxContainerClassName, terminologyClassName }) => {
   const [displaySettingsModal, setDisplaySettingsModal] = useState();
 
   return (
@@ -98,14 +102,14 @@ const Settings = ({ settings, setSettings, userId, settingsClassName, settingsMo
           <img src={settingsIcon} alt={`settings_icon`} /> :
           settingsIcon }
       </button>
-      { displaySettingsModal && <SettingsModal settings={settings} setSettings={setSettings} userId={userId} closeButtonClassName={closeButtonClassName} closeIcon={closeIcon} radioBoxContainerClassName={radioBoxContainerClassName} terminologyClassName={terminologyClassName} hideModal={() => setDisplaySettingsModal(false)} settingsModalClassName={settingsModalClassName} RadioBoxComponent={RadioBoxComponent} /> }
+      { displaySettingsModal && <SettingsModal settings={settings} setSettings={setSettings} userId={userId} settingsCloseButtonClassName={settingsCloseButtonClassName} settingsCloseIcon={settingsCloseIcon} radioBoxContainerClassName={radioBoxContainerClassName} terminologyClassName={terminologyClassName} hideModal={() => setDisplaySettingsModal(false)} settingsModalClassName={settingsModalClassName} RadioBoxComponent={RadioBoxComponent} /> }
     </div>
   );
 };
 
-const Hidayah = ({ content, userId, action, style, className, tabsContainerClassName, tabClassName, contentClassName, terminologyClassName, closeButtonClassName,
-  popUpClassName, settingsClassName, settingsModalClassName, settingsOpenButtonClassName, radioBoxContainerClassName, showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true,
-  guidanceIcon, clarificationIcon, ramadanIcon, marriageIcon, settingsIcon, closeIcon, RadioBoxComponent } = {}) => {
+const Hidayah = ({ content, userId, action, style, className, tabsContainerClassName, tabClassName, contentClassName, terminologyClassName, settingsCloseButtonClassName,
+  popUpClassName, popUpCloseButtonClassName, settingsClassName, settingsModalClassName, settingsOpenButtonClassName, radioBoxContainerClassName, showTabsIcons=true, showTabsTitle=true, showTitle=true, showInnerTitle=true,
+  guidanceIcon, clarificationIcon, ramadanIcon, marriageIcon, settingsIcon, settingsCloseIcon, popUpCloseIcon, RadioBoxComponent } = {}) => {
   const [activeTab, setActiveTab] = useState('Guidance');
   const [displayPopUpModal, setDisplayPopUpModal] = useState();
   const [popUpModalWord, setPopUpModalTerm] = useState();
@@ -150,7 +154,7 @@ const Hidayah = ({ content, userId, action, style, className, tabsContainerClass
   return (
     <div className={className || ''} style={{ ...style }}>
       <Settings settings={settings} setSettings={setSettings} userId={userId} settingsClassName={settingsClassName} settingsModalClassName={settingsModalClassName} settingsOpenButtonClassName={settingsOpenButtonClassName} RadioBoxComponent={RadioBoxComponent}
-        closeButtonClassName={closeButtonClassName} settingsIcon={settingsIcon} closeIcon={closeIcon} radioBoxContainerClassName={radioBoxContainerClassName} terminologyClassName={terminologyClassName}
+        settingsCloseButtonClassName={settingsCloseButtonClassName} settingsIcon={settingsIcon} settingsCloseIcon={settingsCloseIcon} radioBoxContainerClassName={radioBoxContainerClassName} terminologyClassName={terminologyClassName}
       />
       { showTitle && <Title text={content.title} />}
       <div className={tabsContainerClassName || ''}>
@@ -166,7 +170,7 @@ const Hidayah = ({ content, userId, action, style, className, tabsContainerClass
         ))}
       </div>
       {/* eslint-disable-next-line max-len */}
-      <PopUpModal popUpClassName={popUpClassName} displayPopUpModal={displayPopUpModal} popUpModalWord={popUpModalWord} setDisplayPopUpModal={setDisplayPopUpModal} closeButtonClassName={closeButtonClassName} closeIcon={closeIcon} />
+      <PopUpModal popUpClassName={popUpClassName} displayPopUpModal={displayPopUpModal} popUpModalWord={popUpModalWord} setDisplayPopUpModal={setDisplayPopUpModal} popUpCloseButtonClassName={popUpCloseButtonClassName} popUpCloseIcon={popUpCloseIcon} />
       <div className={contentClassName || ''}>
         {activeTab === 'Guidance' && <Guidance action={action ? action : alternativeAction} text={content.guidance} showInnerTitle={showInnerTitle} settings={settings[userId] || DEFAULT_SETTINGS} terminologyClassName={terminologyClassName} />}
         {activeTab === 'Clarification' && <Clarification action={action ? action : alternativeAction} text={content.additionalClarifications} showInnerTitle={showInnerTitle} settings={settings[userId] || DEFAULT_SETTINGS} terminologyClassName={terminologyClassName} />}
@@ -186,10 +190,11 @@ Hidayah.propTypes = {
   tabClassName: PropTypes.string,
   contentClassName: PropTypes.string,
   popUpClassName: PropTypes.string,
+  popUpCloseButtonClassName: PropTypes.string,
   settingsClassName: PropTypes.string,
   settingsModalClassName: PropTypes.string,
   settingsOpenButtonClassName: PropTypes.string,
-  closeButtonClassName: PropTypes.string,
+  settingsCloseButtonClassName: PropTypes.string,
   terminologyClassName: PropTypes.string,
   radioBoxContainerClassName: PropTypes.string,
   showTitle: PropTypes.bool,
@@ -216,7 +221,11 @@ Hidayah.propTypes = {
     PropTypes.string,
     PropTypes.element
   ]),
-  closeIcon: PropTypes.oneOfType([
+  popUpCloseIcon: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.element
+  ]),
+  settingsCloseIcon: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.element
   ]),
