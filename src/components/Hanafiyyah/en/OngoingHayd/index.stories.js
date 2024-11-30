@@ -39,7 +39,8 @@ Default.args = {
   ramadanIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   marriageIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/web-app-development/asterisk-icon.png',
   settingsIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/tools-equipment-construction/setting-icon.png',
-  closeIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/close-icon.png'
+  settingsCloseIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/close-icon.png',
+  popUpCloseIcon: 'https://uxwing.com/wp-content/themes/uxwing/download/checkmark-cross/close-icon.png'
 };
 
 export const overrideAction = Template.bind({});
