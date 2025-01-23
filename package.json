@@ -71,7 +71,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-visualizer": "^5.12.0",
     "sirv-cli": "^3.0.0",
-    "storybook": "^7.6.6",
+    "storybook": "^8.5.1",
     "storybook-css-modules": "^1.0.8"
   },
   "peerDependencies": {
