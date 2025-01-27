@@ -47,7 +47,7 @@
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@storybook/addon-essentials": "^7.6.6",
-    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-interactions": "^8.5.2",
     "@storybook/addon-links": "^8.0.0",
     "@storybook/blocks": "^8.0.0",
     "@storybook/preact": "^8.0.0",
