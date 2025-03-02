@@ -2,7 +2,9 @@
 
 ## Guidance
 
-- Stop praying Salaah, fasting, Tilawah, Tawaaf etc.
+- Stop praying Salaah, fasting(if it is a clear flow of blood), Tilawah, Tawaaf etc.
+  - In the case of fasting, if the bleeding recorded is just a single spotting, then refer your matter to scholars for guidance.
+  - Once the bleeding is a clear flow of blood however, then it is Wajib to break your fast discreetly.
 - When bleeding stops and it's unclear if it will resume, it's Wajib to complete your Salaah at the latest permissible times:
   - Fajr and Dhuhr: Pray at the last possible moment.
   - ‘Asr, Maghrib, and ‘Isha: Pray before Makrooh time, defined as:
@@ -10,6 +12,7 @@
     - Maghrib: When many stars are visible, but with Western horizon still red.
     - ‘Isha: At the midpoint between Maghrib and Fajr for men able to attend Salaah in congregation. For women, this does not apply so they will complete ‘Isha at the last possible moment.
 - Ghusl is not required every time bleeding stops; Wudu is enough for Salaah.
+- In the case of fasting, if the bleeding stops until the time of next Fajr, then it is Wajib to start your fast for that day, even though the previous day was missed on account of Hayd.
 
 ## Additional Clarifications
 
@@ -28,7 +31,9 @@
 ## Ramadan Clarifications
 
 - Missing a Ramadan fast on account of a Bleeding Most Likely Hayd can take on the following scenarios:
-  - If the bleeding started during daytime fasting, then it is Wajib to break your fast discreetly
+  - If the bleeding started during daytime fasting:
+    - If the bleeding is just a single spotting, then refer your matter to scholars for guidance.
+    - However, once the bleeding is a clear flow of blood, then it is Wajib to break your fast discreetly.
   - If the bleeding started during nighttime and persists overnight until Fajr, then you are exempted from fasting that day
     - However, if the bleeding stopped at night before Fajr time sets in, such that there was enough time for Ghusl and Takbeer-e-Tahreemah before Fajr to be done, then it is required to fast that day.
   - If the bleeding stopped during daytime, then you must continue to observe fast-like behaviour (abstain from food, drink, and conjugal relations)
