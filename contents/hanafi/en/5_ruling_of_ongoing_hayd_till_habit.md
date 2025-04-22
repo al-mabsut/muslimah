@@ -29,12 +29,12 @@
 
 - During this period, specific physical boundaries are set for the husband:
   - Direct contact with or viewing the wife's skin between the navel and knee is strictly prohibited.
-  - Engaging in any sexual activity that stimulates the wife's vagina is forbidden, including conjugal relations and other forms of stimulation, such as masturbation.
-- However, within these limits, the husband may:
-  - Rest his head on the wife's clothed lap.
-  - Kiss any other part of the wife's body, including mouth-to-mouth kissing.
-  - Engage in physical contact like fondling breasts.
-  - Have non-penetrative physical contact with any of his body parts while ensuring no vaginal stimulation occurs.
+  - Sexual intercourse is strictly forbidden.
+- However, within these limits, the husband may engage in:
+  - Resting his head on her clothed lap.
+  - Physical intimacy above the navel and below her knees, including kissing, fondling breasts, and other forms of contact.
+  - Contact between the navel and knees, provided there is a barrier (such as clothing or anything else that prevents body-heat transfer) preventing direct skin contact.
+  - Stimulation over clothing, even to the extent that may lead her to orgasm as long as it does not lead to intercourse.
 - Husband and wife will continue to interact with each other in day-to-day matters such as eating together, sleeping in the same bed etc.
 - Conjugal relationships will remain impermissible even if the bleeding has fully stopped. (because this is still the time before the Hayd habit.)
 - Divorce during this time is impermissible, but if issued, it will be valid and carry its full implications.
